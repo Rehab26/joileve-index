@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Almarai', sans-serif;
+        color:#1D293F;
+    }
+
+    .bg-primary{
+        background: linear-gradient(177deg, rgba(255,255,255,1) 0%, rgba(222,215,235,1) 60%, rgba(222,215,234,1) 100%);
+        background-repeat: no-repeat;
+    }
+
+    .bg-primary-light{
+        background: linear-gradient(177deg, rgba(255,255,255,1) 0%, rgba(222,215,235,0.5) 60%, rgba(222,215,234,0.3) 100%);
+        background-repeat: no-repeat;
+    }
+    .bg-primary-pink {
+        background: linear-gradient(90deg, #F065A5 -35.43%, rgba(240, 101, 165, 0.47) 35.81%, rgba(240, 101, 165, 0.00) 100%);
+    }
+
+    .product-card:hover .product-img{
+        filter:brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(22deg) brightness(105%) contrast(101%);
+    }
+
+    .product-card:hover {
+        fill: linear-gradient(90deg, #F065A5 -35.43%, rgba(240, 101, 165, 0.47) 35.81%, rgba(240, 101, 165, 0.00) 100%);
+    }
+    .shadow-custom {
+        box-shadow: 16px 16px 44px 0px rgba(0, 0, 0, 0.05);
+    }
+    .product-info {
+        border-radius: 10px;
+    }
+    /* .cart-product {
+        display: none;
+    }
+    .product-info:hover .cart-product {
+        display: block;
+    }
+    .product-info:hover {
+        box-shadow: 16px 16px 44px 0px rgba(0, 0, 0, 0.05);
+    } */
+  }
+
+  @layer components {
+    .product-card {
+      @apply hover:bg-light-brand
+       hover:text-white hover:fill-white 
+       cursor-pointer flex-shrink-0 h-[229px] 
+       w-[240px]  bg-white p-5 m-4 shadow-lg rounded-md;
+    }
+
+    .bg-secondary {
+       @apply bg-logo-marks bg-center bg-no-repeat;
+    }
+    .primary-heading {
+       @apply text-3xl font-bold;
+    }
+    
+    .secondary-heading {
+        @apply text-xl font-bold;
+    }
+    .icon-btn {
+        @apply text-center h-[50px] w-[50px] rounded-full text-light-brand hover:bg-light-brand hover:text-white p-3 border border-light-brand cursor-pointer;
+    }
+    .hint-text {
+        @apply text-sm font-normal text-pink-brand space-x-2 hover:text-light-brand;
+    }
+    .text-hint-grey {
+        @apply text-sm font-normal text-gray-dark;
+    }
+    .sale {
+        @apply rounded-full text-white bg-pink-brand py-1 px-1 text-xs;
+    }
+    .text-price {
+        @apply text-light-brand text-lg;
+    }
+    .btn {
+        @apply w-full py-2 block outline-none text-lg text-center rounded-md my-2;
+    }
+    .btn-primary {
+        @apply text-white bg-light-brand;
+    }
+    .event-card {
+       @apply hover:bg-light-brand
+       hover:text-white hover:fill-white 
+       cursor-pointer h-[229px] w-[230px] flex-wrap
+        bg-white p-5 m-4 shadow-lg rounded-md;
+    }
+    
+}
