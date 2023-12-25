@@ -7,6 +7,84 @@
         font-family: 'Almarai', sans-serif;
         color:#1D293F;
     }
+    #menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+    #menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: rgb(98, 97, 97);
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
 
     .bg-primary{
         background: linear-gradient(177deg, rgba(255,255,255,1) 0%, rgba(222,215,235,1) 60%, rgba(222,215,234,1) 100%);
@@ -34,30 +112,28 @@
     .product-info {
         border-radius: 10px;
     }
-    /* .cart-product {
-        display: none;
+    .bg-news-banner {
+        background: url('../src/assets/flower-message.png'), lightgray 50% / contain no-repeat;
+        width: 430px;
+        height: 430px;
     }
-    .product-info:hover .cart-product {
-        display: block;
-    }
-    .product-info:hover {
-        box-shadow: 16px 16px 44px 0px rgba(0, 0, 0, 0.05);
-    } */
-  }
+    
+}
 
   @layer components {
     .product-card {
       @apply hover:bg-light-brand
        hover:text-white hover:fill-white 
-       cursor-pointer flex-shrink-0 h-[229px] 
-       w-[240px]  bg-white p-5 m-4 shadow-lg rounded-md;
+       cursor-pointer flex-shrink-0 h-[10rem] w-[10rem] lg:h-[12rem] lg:w-[14rem]       /* w-[150px] ti:h-[120px]  */
+         bg-white shadow-lg rounded-md lg:mx-4;
     }
+   
 
     .bg-secondary {
        @apply bg-logo-marks bg-center bg-no-repeat;
     }
     .primary-heading {
-       @apply text-3xl font-bold;
+       @apply lg:text-3xl font-bold md:text-2xl sm:text-lg ti:text-lg;
     }
     
     .secondary-heading {
@@ -75,6 +151,10 @@
     .sale {
         @apply rounded-full text-white bg-pink-brand py-1 px-1 text-xs;
     }
+    .news-banner {
+        @apply right-[20%] left-[20%] py-6 px-4 fixed  w-fit top-[30%] bg-white z-50 rounded-lg flex justify-between gap-5 shadow-custom
+        ;
+    }
     .text-price {
         @apply text-light-brand text-lg;
     }
@@ -82,13 +162,14 @@
         @apply w-full py-2 block outline-none text-lg text-center rounded-md my-2;
     }
     .btn-primary {
-        @apply text-white bg-light-brand;
+        @apply text-white bg-light-brand hover:bg-opacity-80;
     }
     .event-card {
-       @apply hover:bg-light-brand
-       hover:text-white hover:fill-white 
-       cursor-pointer h-[229px] w-[230px] flex-wrap
-        bg-white p-5 m-4 shadow-lg rounded-md;
+       @apply flex flex-col hover:bg-light-brand
+       hover:text-white hover:fill-white flex-1 flex-wrap
+       cursor-pointer
+        bg-white p-5 m-4 shadow-lg rounded-md
+         justify-center items-center w-[140px] flex-shrink-0;
     }
     
 }

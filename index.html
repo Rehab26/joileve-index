@@ -12,51 +12,67 @@
     </head>
     
     <body>
-        <main>
-            <div class="p-4 bg-light-brand text-white bg-hero-pattern py-3">
-                <ul class="flex justify-between mx-10 text-center text-sm">
-                    <li class="flex gap-1 justify-center items-center">
+        <main class="w-[100%] h-[100%]">
+
+            <!--News banner-->
+            
+
+
+            <!--End of news banner-->
+
+            <div class="bg-light-brand text-white bg-hero-pattern lg:py-3 md:p-1 sm:py-3">
+                <ul class="flex lg:justify-between justify-center lg:mx-10 text-center md:mx-3 md:text-xs lg:text-lg">
+                    <li class="lg:gap-1 justify-center items-center hidden lg:flex">
                         <embed src="src/assets/car.svg"/> 
                         <p>توصيل إلى</p>
-                        <embed src="src/assets/flag.svg" /> 
+                        <embed class="w-[20px]" src="src/assets/flag.svg" /> 
                         <a href="#" class="space-x-1">الرياض</a>
                     </li>
                     <li>احصل على خصم 20% باستخدام رمز القسيمة craftxtore2023</li>
-                    <li>دخول / سجل معنا</li>
+                    <li class="hidden lg:block">دخول / سجل معنا</li>
                 </ul>
             </div>
             <section class="bg-primary">
             <header>
-                <nav class="text-black-brand flex justify-between mx-[8rem] m-5 p-6 items-center">
-                    <ul class="lg:flex justify-start items-center gap-10 md:hidden sm:hidden">
+                <nav class="text-black-brand w-full flex justify-between mt-5 p-6 items-center">
+                    <div id="menuToggle">
+                        <input type="checkbox" class="" />
+                        <div class="lg:hidden xs:block md:block">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    <ul class="hidden lg:flex lg:justify-start lg:items-center lg:gap-5 text-[1.1rem]">
                         <li class="text-pink-brand">تخفيضات <a><i class="fa-solid fa-chevron-down"></i></a></li>
                         <li>ورد وهدايا</li>
                         <li>مناسبات</li>
                     </ul>
-                    <embed class="" src="src/assets/logo.svg" />
-                    <button class="flex space-x-1 justify-center items-center py-3 px-10 mr-3 rounded-lg border border-light-brand relative">
+                    </div>
+                    <img class="w-[180px]" src="src/assets/logo-img.png" />
+                    <button class="flex space-x-1 justify-center items-center py-3 lg:px-10 px-2 rounded-lg border border-light-brand relative">
                         <div class="absolute -top-3 -right-1 h-5 w-5 bg-pink-brand rounded-full align-middle text-white text-[12px]">5</div>
                         <embed src="src/assets/cart.svg" />
-                        <p>سلة المشتريات</p>
+                        <p class="hidden lg:block">سلة المشتريات</p>
                     </button>
                 </nav>
             </header>
-                <div class="my-20 mx-12 flex justify-center items-center">
+                <div class="lg:my-20 md:my-10 ti:my-5 flex justify-center px-5 items-center">
                     <img src="src/assets/banner.svg" />
                 </div>
                 <div class="w-full h-full bg-logo-pattern bg-no-repeat bg-right-top pb-20">
-                <div class="flex justify-between px-24 items-center my-10">
-                    <div class="flex flex-col justify-around items-stretch text-right">
-                        <h1 class="primary-heading">عبر من خلال هديتك</h1>
-                        <p class=" py-2">نحب ان نهدي احبائنا حسب اهتمامتهم وجويليف تقدم جميعها!</p>
+                <div class="flex justify-center gap-4 md:justify-between items-center my-10 w-full">
+                    <div class="flex flex-col justify-center items-stretch text-right ti:justify-center md:mx-10 lg:mx-20">
+                        <h1 class="primary-heading px-5 md:px-10">عبر من خلال هديتك</h1>
+                        <p class=" py-2 px-5 md:px-10">نحب ان نهدي احبائنا حسب اهتمامتهم وجويليف تقدم جميعها!</p>
                     </div>
-                    <div class="flex justify-center gap-3">
+                    <div class="flex justify-center">
                         
                     </div>
                 </div>
                         
 
-                            <div class="flex gap-2 overflow-x-scroll">
+                            <div class="flex gap-3 lg:flex-row px-5 w-full overflow-x-scroll">
                                 <div class="product-card">
                                     <div class="flex flex-col justify-center items-start p-3 m-3">
                                         <object type="image/svg+xml" data="src/assets/choco.svg" class="product-img">
@@ -112,14 +128,14 @@
                 </section>
                 <section class="bg-secondary p-10">
                     <div class="flex flex-col justify-center items-center my-10">
-                            <p class=" py-2 text-light-brand">تركنا لك الفرصة لتجميع هديتك </p>
-                        <div class="flex justify-center gap-1">
+                            <p class="py-2 text-light-brand">تركنا لك الفرصة لتجميع هديتك </p>
+                        <div class="flex justify-center">
                             <img src="src/assets/rightframe.svg" />
                             <h1 class="primary-heading">اصنع هديتك بنفسك</h1>
                             <img src="src/assets/textFrame.svg" />
                         </div>
                     </div>
-                    <div class="flex justify-center items-center gap-10">
+                    <div class="flex lg:flex-row justify-center items-center lg:gap-10 ti:flex-col">
                         
                         <div class="flex flex-col justify-between items-center">
                             <div class="relative rounded-full bg-primary-light w-[218px] h-[218px]">
@@ -191,7 +207,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -210,7 +226,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -230,7 +246,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -248,7 +264,7 @@
                         </div>
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -294,7 +310,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -313,7 +329,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -332,7 +348,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -351,7 +367,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -397,38 +413,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="event-list flex gap-1 pb-10">
-                        <div class="event-card flex flex-col justify-center items-center">
+                    <div class="event-list flex gap-1 pb-10 overflow-x-scroll">
+                        <div class="event-card">
                             <img src="src/assets/marrige.png" />
                             <h2 class="secondary-heading">مبروك الزواج</h2>
                         </div>
 
-                        <div class="event-card flex flex-col justify-center items-center">
+                        <div class="event-card">
                             <img src="src/assets/baby.png" />
                             <h2 class="secondary-heading">مبروك المولود</h2>
                         </div>
 
-                        <div class="event-card flex flex-col justify-center items-center">
+                        <div class="event-card">
                             <img src="src/assets/heal.png" />
                             <h2 class="secondary-heading">ألف سلامة</h2>
                         </div>
 
-                        <div class="event-card flex flex-col justify-center items-center">
+                        <div class="event-card">
                             <img src="src/assets/home.png" />
                             <h2 class="secondary-heading">مبروك المنزل</h2>
                         </div>
 
-                        <div class="event-card flex flex-col justify-center items-center">
+                        <div class="event-card">
                             <img src="src/assets/graduate.png" />
                             <h2 class="secondary-heading">مبروك التخرج</h2>
                         </div>
 
-                        <div class="event-card flex flex-col justify-center items-center">
+                        <div class="event-card">
                             <img src="src/assets/work.png" />
                             <h2 class="secondary-heading">مبروك الوظيفة</h2>
                         </div>
 
-                        <div class="event-card flex flex-col justify-center items-center">
+                        <div class="event-card">
                             <img src="src/assets/love.png" />
                             <h2 class="secondary-heading">عبر عن حبك</h2>
                         </div>
@@ -463,7 +479,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -482,7 +498,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -502,7 +518,7 @@
 
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>
@@ -520,7 +536,7 @@
                         </div>
                         <div class="flex flex-col justify-around product-info cursor-pointer shadow-custom border-opacity-0 mt-4 p-5">
                             <div class="relative h-[330] rounded-md w-[292px] py-3">
-                                <p class="sale absolute top-5 right-3">خصم 15%</p>
+                                <p class="sale-item absolute top-5 right-3">خصم 15%</p>
                                 <span class="material-symbols-outlined absolute left-3 top-5 hover:fill-pink-brand">
                                     favorite
                                     </span>

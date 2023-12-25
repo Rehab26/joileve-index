@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}" , "*.{html,js}"],
   theme: {
     backgroundImage: {
       'hero-pattern': "url('../src/assets/bg.png')",
@@ -11,6 +11,8 @@ module.exports = {
       'logo-marks-2':"url('../src/assets/logo3.png')"
     },
     screens: {
+      'ti':'380px',
+      'xs':'480px',
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
@@ -23,6 +25,8 @@ module.exports = {
       'black-brand':'#202020',
       'pink-brand':'#F065A5',
       'light-background':'#EFECF5',
+      'text-grey':'#ADADAD',
+      'light-black':'#858585',
       'pink': '#ff49db',
       'orange': '#ff7849',
       'green': '#13ce66',
