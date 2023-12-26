@@ -11,13 +11,24 @@ module.exports = {
       'logo-marks-2':"url('../src/assets/logo3.png')"
     },
     screens: {
-      'ti':'380px',
-      'xs':'480px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+      // 'ti':'380px',
+      // 'xs':'480px',
+      // 'sm': '640px',
+      // 'md': '768px',
+      // 'lg': '1024px',
+      // 'xl': '1280px',
+      // '2xl': '1536px',
+      '2xl': {'max': '1400px'},
+
+      'xl': {'max': '1279px'},
+
+      'lg': {'max': '1023px'},
+
+      'md': {'max': '767px'},
+
+      'sm': {'max': '639px'},
+      'ti':{'max': '380px'},
+      'tablet':{'min': '768px' , 'max' : '991px'}
     },
     colors: {
       'light-brand': '#8572A8',

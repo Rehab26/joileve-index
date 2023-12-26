@@ -7,6 +7,30 @@
         font-family: 'Almarai', sans-serif;
         color:#1D293F;
     }
+    body {
+        overflow-x: hidden;
+    }
+    @media (max-width: 767px) {
+        body {
+            font-size: 14px;
+        }
+        /* Additional mobile styles */
+    }
+    
+    /* Tablet styles */
+    @media (min-width: 768px) and (max-width: 991px) {
+        /* Tablet styles */
+    }
+    
+    /* Small laptops and desktops styles */
+    @media (min-width: 992px) and (max-width: 1199px) {
+        /* Small laptops and desktops styles */
+    }
+    
+    /* Standard laptops and desktops styles */
+    @media (min-width: 1200px) {
+        /* Standard laptops and desktops styles */
+    }
     #menuToggle input
 {
   display: block;
@@ -123,9 +147,19 @@
   @layer components {
     .product-card {
       @apply hover:bg-light-brand
+      flex flex-col justify-center items-center
        hover:text-white hover:fill-white 
-       cursor-pointer flex-shrink-0 h-[10rem] w-[10rem] lg:h-[12rem] lg:w-[14rem]       /* w-[150px] ti:h-[120px]  */
-         bg-white shadow-lg rounded-md lg:mx-4;
+       cursor-pointer flex-shrink-0 h-[12rem] w-[12rem] tablet:h-[12rem] tablet:w-[9rem]  md:h-[9rem] md:w-[6rem] 
+             /* w-[150px] ti:h-[120px]  */
+         bg-white shadow-lg rounded-md px-4 md:px-3;
+    }
+
+    .product-img {
+       @apply w-20 md:w-10 sm:w-10 lg:w-16;
+    }
+
+    .product-card h3 {
+        @apply md:text-lg sm:text-[14px] overflow-x-hidden;
     }
    
 
@@ -133,7 +167,7 @@
        @apply bg-logo-marks bg-center bg-no-repeat;
     }
     .primary-heading {
-       @apply lg:text-3xl font-bold md:text-2xl sm:text-lg ti:text-lg;
+       @apply text-3xl font-bold md:text-2xl sm:text-lg;
     }
     
     .secondary-heading {
