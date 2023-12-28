@@ -22,13 +22,13 @@ module.exports = {
 
       'xl': {'max': '1279px'},
 
-      'lg': {'max': '1023px'},
+      'lg': {'min': '1023px'},
 
       'md': {'max': '767px'},
 
       'sm': {'max': '639px'},
       'ti':{'max': '380px'},
-      'tablet':{'min': '768px' , 'max' : '991px'}
+      'tablet':{'min': '768px' , 'max' : '1022px'}
     },
     colors: {
       'light-brand': '#8572A8',
