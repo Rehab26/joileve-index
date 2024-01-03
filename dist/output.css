@@ -1311,10 +1311,11 @@ body {
 
 .product-card__content {
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.25rem;
 }
 
 .product-img {
@@ -1932,6 +1933,10 @@ li a:hover {
   margin-bottom: 0.5rem;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1962,6 +1967,10 @@ li a:hover {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .block {
@@ -2120,10 +2129,6 @@ li a:hover {
   width: 100vw;
 }
 
-.w-\[150px\] {
-  width: 150px;
-}
-
 .w-\[180px\] {
   width: 180px;
 }
@@ -2166,6 +2171,14 @@ li a:hover {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[60\%\] {
+  width: 60%;
+}
+
+.w-\[80\%\] {
+  width: 80%;
 }
 
 .flex-1 {
@@ -2317,6 +2330,14 @@ li a:hover {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-\[2px\] {
+  gap: 2px;
+}
+
+.gap-\[4px\] {
+  gap: 4px;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -2712,6 +2733,10 @@ li a:hover {
   font-size: 12px;
 }
 
+.text-\[14px\] {
+  font-size: 14px;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2729,6 +2754,10 @@ li a:hover {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .font-medium {
@@ -3100,6 +3129,11 @@ li a:hover {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
+
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3141,16 +3175,16 @@ li a:hover {
     width: 8rem;
   }
 
-  .md\:w-\[70px\] {
-    width: 70px;
-  }
-
-  .md\:w-\[30px\] {
-    width: 30px;
+  .md\:w-\[20px\] {
+    width: 20px;
   }
 
   .md\:w-\[60px\] {
     width: 60px;
+  }
+
+  .md\:w-\[90px\] {
+    width: 90px;
   }
 
   .md\:flex-\[1\] {
@@ -3232,6 +3266,14 @@ li a:hover {
     font-size: 0.75rem;
     line-height: 1rem;
   }
+
+  .md\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .md\:text-\[10px\] {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 639px) {
@@ -3254,6 +3296,14 @@ li a:hover {
 
   .sm\:w-24 {
     width: 6rem;
+  }
+
+  .sm\:w-\[70px\] {
+    width: 70px;
+  }
+
+  .sm\:w-\[90px\] {
+    width: 90px;
   }
 
   .sm\:flex-\[1\] {
@@ -3313,6 +3363,14 @@ li a:hover {
 
   .ti\:hidden {
     display: none;
+  }
+
+  .ti\:w-\[30px\] {
+    width: 30px;
+  }
+
+  .ti\:w-\[60px\] {
+    width: 60px;
   }
 
   .ti\:flex-\[1\] {

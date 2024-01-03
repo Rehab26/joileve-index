@@ -240,7 +240,7 @@
          bg-white shadow-lg rounded-md px-4 md:px-3;
     }
     .product-card__content {
-        @apply flex flex-col justify-center gap-4 items-center;
+        @apply flex flex-col h-full justify-center gap-1 items-center;
     }
 
     .product-img {
