@@ -1311,11 +1311,16 @@ body {
 
 .product-card__content {
   display: flex;
-  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+}
+
+@media (max-width: 639px) {
+  .product-card__content {
+    gap: 2px;
+  }
 }
 
 .product-img {
@@ -1969,10 +1974,6 @@ li a:hover {
   margin-top: 1.25rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .block {
   display: block;
 }
@@ -2113,10 +2114,6 @@ li a:hover {
   width: 2rem;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
 .w-\[100\%\] {
   width: 100%;
 }
@@ -2171,14 +2168,6 @@ li a:hover {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[60\%\] {
-  width: 60%;
-}
-
-.w-\[80\%\] {
-  width: 80%;
 }
 
 .flex-1 {
@@ -2334,10 +2323,6 @@ li a:hover {
 
 .gap-\[2px\] {
   gap: 2px;
-}
-
-.gap-\[4px\] {
-  gap: 4px;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -2731,10 +2716,6 @@ li a:hover {
 
 .text-\[12px\] {
   font-size: 12px;
-}
-
-.text-\[14px\] {
-  font-size: 14px;
 }
 
 .text-lg {
@@ -3175,10 +3156,6 @@ li a:hover {
     width: 8rem;
   }
 
-  .md\:w-\[20px\] {
-    width: 20px;
-  }
-
   .md\:w-\[60px\] {
     width: 60px;
   }
@@ -3253,6 +3230,10 @@ li a:hover {
     padding-right: 2.5rem;
   }
 
+  .md\:text-\[10px\] {
+    font-size: 10px;
+  }
+
   .md\:text-\[14px\] {
     font-size: 14px;
   }
@@ -3265,14 +3246,6 @@ li a:hover {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .md\:text-\[12px\] {
-    font-size: 12px;
-  }
-
-  .md\:text-\[10px\] {
-    font-size: 10px;
   }
 }
 
@@ -3296,10 +3269,6 @@ li a:hover {
 
   .sm\:w-24 {
     width: 6rem;
-  }
-
-  .sm\:w-\[70px\] {
-    width: 70px;
   }
 
   .sm\:w-\[90px\] {
@@ -3363,10 +3332,6 @@ li a:hover {
 
   .ti\:hidden {
     display: none;
-  }
-
-  .ti\:w-\[30px\] {
-    width: 30px;
   }
 
   .ti\:w-\[60px\] {
