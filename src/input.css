@@ -240,15 +240,21 @@
          bg-white shadow-lg rounded-md px-4 md:px-3;
     }
     .product-card__content {
-        @apply flex flex-col justify-center gap-1 sm:gap-[2px] items-center;
+        @apply mx-auto my-auto;
+    }
+    .product-name {
+      @apply text-[3px] font-bold;
     }
 
     .product-img {
        @apply w-20 md:w-14 sm:w-12;
     }
+    html {
+      @apply sm:text-[10px] md:text-[12px];
+    }
 
     .product-card h3 {
-        @apply md:text-lg sm:text-[14px] overflow-x-hidden;
+        @apply md:text-lg sm:text-[1rem] overflow-x-hidden my-3;
     }
 
     .product-list {
