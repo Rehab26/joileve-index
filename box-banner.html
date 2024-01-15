@@ -11,24 +11,81 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
-        <div class="banner-container absolute">
+        <!-- <div class="banner-container absolute">
             <div class="news-banner">
                 <div class="banner-img bg-light-brand rounded-lg bg-news-banner">
-                     <!-- <img src="/src/assets/flower-message.png" alt="flower" /> -->
+                     <!-- <img src="/src/assets/flower-message.png" alt="flower" /> 
                 </div>
                 <div class="banner-content flex flex-col justify-center gap-5 w-[45%]">
                     <h1 class="primary-heading">الحصول على إشعار !</h1>
                     <p class="subtitle text-light-black">اشترك في النشرة الإخبارية اليوم لتلقي إشعارات حول المنتجات الجديدة.</p>
                     <input type="email" class="input focus:border-light-brand focus:outline-none text-md px-6 py-4 border border-text-grey rounded-lg text-text-grey" placeholder="عنوان البريد الإلكتروني ">
                     <button class="btn btn-primary space-y-3">سجل الآن</button>
-                    <!-- <input type="radio" value="true"> -->
+                    <!-- <input type="radio" value="true"> 
                 </div>
                 <p class="absolute left-4 ml-auto text-light-black cursor-pointer px-4">X</p>
     
             </div>
-        </div>
-        
+        </div> -->
 
+
+
+<!-- Modal toggle -->
+<button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+    Toggle modal
+  </button>
+  
+  <!-- Main modal -->
+  <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-2xl md:max-w-lg max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+              <!-- Modal header -->
+              <div class="flex items-center justify-between p-4 md:p-5 rounded-t">
+                  <h3 class="text-xl font-semibold pt-3">
+                    الحصول على إشعار !
+                  </h3>
+                  <button type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-lg w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 flex justify-between items-center md:block gap-5">
+                <div class="bg-light-brand rounded-md">
+                    <img src="/src/assets/flower-message.png" alt="flower" />
+                </div>
+                
+                  <form class="space-y-4" action="#">
+                 
+                      
+                      <div class="py-3 text-light-black text-sm">
+                        <p>اشترك في النشرة الإخبارية اليوم لتلقي إشعارات حول المنتجات الجديدة.</p>
+                      </div>
+                      <div>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-text-grey text-sm rounded-lg focus:ring-light-brand focus:border-light-brand block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="عنوان البريد الإلكتروني " required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">سجل الآن</button>
+                      <div class="flex justify-between">
+                          <div class="flex items-start">
+                              <div class="flex items-center h-5">
+                                  <input id="dontShowThisAgain" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                              </div>
+                              <label for="dontShowThisAgain" class="ms-2 text-sm font-medium text-light-black dark:text-gray-300"> لا تظهر النافذة المنبثقة مرة أخرى</label>
+                          </div>
+                      </div>
+                      
+                      
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div> 
+  
+        
+        <script src="backend/flowbite/dist/flowbite.min.js"></script>
     </body>
 </html>
 

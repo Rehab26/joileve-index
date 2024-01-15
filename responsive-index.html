@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/8cafc5136e.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
@@ -15,9 +15,9 @@
             <div class="bg-light-brand text-white bg-hero-pattern py-3 px-3">
                 <ul class="flex justify-between items-center md:justify-center tablet:justify-between lg:px-10 text-center md:px-3 text-sm">
                     <li class="lg:gap-1 justify-center items-center flex md:hidden text-[12px]">
-                        <embed src="src/assets/car.svg"/> 
+                        <img src="src/assets/car.svg"/> 
                         <p>توصيل إلى</p>
-                        <embed class="w-[20px]" src="src/assets/flag.svg" /> 
+                        <img class="w-[20px]" src="src/assets/flag.svg" /> 
                         <a href="#" class="space-x-1">الرياض</a>
                     </li>
                     <li>احصل على خصم 20% باستخدام رمز القسيمة craftxtore2023</li>
@@ -25,8 +25,8 @@
                 </ul>
             </div>
             <section class="bg-primary pt-8">
-            <header class="md:text-sm px-24 md:px-10 tablet:px-5 sm:px-1">
-                <nav class="text-black-brand w-full flex justify-between p-5 items-center md:text-[14px] top-3">
+            <header class="">
+                <nav id="fixedNav" class="flex z-50 w-full text-black-brand justify-between p-5 items-center md:text-[14px] md:text-sm px-24 md:px-10 tablet:px-5 sm:px-3">
                     <div id="menuToggle" class="cursor-pointer relative">
                         <input type="checkbox" class="hidden" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="center" aria-controls="drawer-right-example" />
                         <div class="hidden sm:block md:block">
@@ -35,7 +35,7 @@
                             <span class="width-3"></span>
                         </div>
 
-                    <ul class="flex justify-start items-center gap-5 sm:hidden md:hidden">
+                    <ul id="menu" class="flex justify-start items-center gap-5 sm:hidden md:hidden">
                         <li class="text-pink-brand">تخفيضات <a><i class="fa-solid fa-chevron-down"></i></a></li>
                         <li class="cursor-pointer" id="dropdownDefaultButton" data-dropdown-toggle="categories" data-dropdown-trigger="hover">ورد وهدايا
                             <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -48,7 +48,7 @@
                             </svg>
                         </li>
                     </ul>
-                    </div>
+                   </div>
                     <div id="categories" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                           <li>
@@ -96,9 +96,7 @@
                             <span class="material-symbols-outlined font-extrabold">
                                 favorite
                                 </span>
-                                <span class="material-symbols-outlined">
-                                    search
-                                    </span>
+                                
                                     <span class="material-symbols-outlined">
                                         person
                                         </span>
@@ -128,21 +126,36 @@
                             </li>
                         </ul>
                         <div class="flex gap-3">
-                            <embed src="src/assets/car.svg"/> 
+                            <img src="src/assets/car.svg"/> 
                             <p>توصيل إلى</p>
-                            <embed class="" src="src/assets/flag.svg" /> 
+                            <img class="" src="src/assets/flag.svg" /> 
                             <a href="#" class="space-x-1">الرياض</a>
                         </div>
 
                        </div>
                     </div>
 
-                    <img class="sm:w-24 tablet:w-32 md:w-32 align-top" src="src/assets/logo-img.png" />
-                    <button class="flex space-x-1 justify-center items-center py-3 px-10 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
-                        <div class="absolute -top-3 -right-2 md:top-1 md:-right-2 h-5 w-5 bg-pink-brand rounded-full align-middle text-white text-[12px]">5</div>
-                        <embed src="src/assets/cart.svg"/>
-                        <p class="sm:hidden md:hidden lg:block">سلة المشتريات</p>
-                    </button>
+                    <img id="logo" class="sm:w-24 tablet:w-32 md:w-32 align-top" src="src/assets/logo-img.png" />
+                    <div id="leftMenu" class="flex gap-3">
+                        <button class="py-1 px-3 bg-light-pink rounded-lg search-toggle"><img class="search-icon" src="src/assets/Search.svg" /></button>
+                        
+                        <button class="flex space-x-1 justify-center items-center py-3 px-5 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
+                            <div class="absolute -top-3 -right-2 md:top-1 md:-right-2 h-5 w-5 bg-pink-brand rounded-full align-middle text-white text-[12px]">5</div>
+                            <img src="src/assets/cart.svg"/>
+                            <p class="sm:hidden md:hidden lg:block">سلة المشتريات</p>
+                        </button>
+
+                        
+                    </div>
+                    <div class="search-block p-3 drop-shadow">
+                        <form class="search-form">
+                            <img class="search-icon" src="src/assets/Search.svg" />
+                           <input type="search" name="search" class="search-input focus:ring-0 p-3 text-lg placeholder:text-[#202020]" placeholder="ما الذي تبحث عنه ؟">
+                           <svg class="w-3 h-3 search-cancel" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                         </svg>
+                        </form>
+                     </div>
                 </nav>
             </header>
                 <div class="my-10 sm:my-5 flex justify-center px-20 md:px-5 items-center">
@@ -158,7 +171,7 @@
                         
                     </div>
                 </div>
-                            <div id="slider" tabindex="1" class="flex gap-3 lg:flex-row px-5 w-full overflow-x-auto overflow-y-hidden">
+                            <div id="content" tabindex="1" class="slider flex gap-3 lg:flex-row px-5 w-full overflow-x-auto overflow-y-hidden">
                                 <div class="product-card" id="slide0">
                                     <div class="product-card__content">
                                         <object type="image/svg+xml" data="src/assets/choco.svg" class="product-img">
@@ -207,16 +220,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <ul class="dot-indicator-list justify-center text-white hidden tablet:flex md:flex sm:flex ti:flex"
-                            style="--num-slides: 3;">
-                                <div class="indicator hidden" id="indicator"></div>
-                                <li><button onclick="document.getElementById('slide0').scrollIntoView()"></button></li>
-                                <li><button onclick="document.getElementById('slide1').scrollIntoView()"></button></li>
-                                <li class="hidden"><button onclick="document.getElementById('slide2').scrollIntoView()"></button></li>
-                                <li><button onclick="document.getElementById('slide3').scrollIntoView()"></button></li>
-                                <li class="hidden"><button onclick="document.getElementById('slide4').scrollIntoView()"></button></li>
-                                <li><button onclick="document.getElementById('slide5').scrollIntoView()"></button></li>
-                              </ul>
+                            <div class="dot-indicator" id="dot-indicator"></div>
                     
                 </div>
                 </section>
@@ -245,14 +249,14 @@
                             <div class="relative rounded-full bg-primary-light w-[218px] h-[218px]">
                                 <img class="absolute z-10" src="src/assets/flower2.png" />
                             </div>
-                            <h3 class="secondary-heading py-5"> حدد بطاقة الاهداء </h3>
+                            <h3 class="product-tag_name py-5"> حدد بطاقة الاهداء </h3>
                         </div>
                         <img src="src/assets/arrow.svg" />
                         <div class="flex flex-col justify-center items-center">
                             <div class="relative rounded-full bg-primary-light w-[218px] h-[218px]">
                                 <img class="absolute z-10" src="src/assets/flower3.png" />
                             </div>
-                            <h3 class="secondary-heading py-5">اعتمد الهدية</h3>
+                            <h3 class="product-tag_name py-5">اعتمد الهدية</h3>
                         </div>
                     </div>
                     
@@ -282,84 +286,86 @@
                             </div> -->
                     </div>
                     </div>
-                    <div id="slider" class="slider product-list">
+                    <div class="slider product-list" id="content1">
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         
-                        </div>
+                        
+                    </div>
+                    <div class="dot-indicator" id="dot-indicator1"></div>
                        
 
                         
@@ -398,84 +404,85 @@
                             </div> -->
                     </div>
                     </div>
-                    <div id="slider" class="slider product-list">
+                    <div id="content2" class="slider product-list">
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
                         <div class="product-tag">
                             <div class="relative">
                                 <p class="sale">15%</p>
-                                <span class="material-symbols-outlined icon-fav">
+                                <!-- <span class="material-symbols-outlined icon-fav">
                                     favorite
-                                    </span>
+                                    </span> -->
                                 <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                             </div>
                             <div class="">
                                 <p class="text-hint-grey my-3">باتشي</p>
                                 <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                                 <p class="text-price ">20.00 ر.س</p>
-                                <div class="cart-product">
+                                <!-- <div class="cart-product">
                                     <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                     <button class="btn btn-primary">إضافة للسلة</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         
                         </div>
+                        <div class="dot-indicator" id="dot-indicator2"></div>
                        
                 </section>
 
@@ -505,7 +512,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="slider" class="event-list flex gap-1 pb-10 overflow-x-scroll md:pb-5 sm:pb-3 ti:pb-2">
+                <div id="content3" class="slider event-list flex gap-1 pb-10 overflow-x-scroll md:pb-5 sm:pb-3 ti:pb-2">
                     <div class="event-card">
                         <img src="src/assets/marrige.png" />
                         <h2 class="event-card_title">مبروك الزواج</h2>
@@ -541,6 +548,7 @@
                         <h2 class="event-card_title">عبر عن حبك</h2>
                     </div>
                 </div>
+                <div class="dot-indicator" id="dot-indicator3"></div>
             </div>
             </section>
 
@@ -573,13 +581,13 @@
                         </div> -->
                 </div>
                 </div>
-                <div id="slider" class="slider product-list">
+                <div id="content4" class="slider product-list">
                     <div class="product-tag">
                         <div class="relative">
                             <p class="sale">15%</p>
-                            <span class="material-symbols-outlined icon-fav">
+                            <!-- <span class="material-symbols-outlined icon-fav">
                                 favorite
-                                </span>
+                                </span> -->
                             <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                         </div>
                         <div class="">
@@ -587,8 +595,8 @@
                             <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                             <p class="text-price ">20.00 ر.س</p>
                             <div class="cart-product">
-                                <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
-                                <button class="btn btn-primary">إضافة للسلة</button>
+                                <!-- <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity"> -->
+                                <!-- <button class="btn btn-primary">إضافة للسلة</button> -->
                             </div>
                         </div>
                     </div>
@@ -596,66 +604,66 @@
                     <div class="product-tag">
                         <div class="relative">
                             <p class="sale">15%</p>
-                            <span class="material-symbols-outlined icon-fav">
+                            <!-- <span class="material-symbols-outlined icon-fav">
                                 favorite
-                                </span>
+                                </span> -->
                             <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                         </div>
                         <div class="">
                             <p class="text-hint-grey my-3">باتشي</p>
                             <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                             <p class="text-price ">20.00 ر.س</p>
-                            <div class="cart-product">
+                            <!-- <div class="cart-product">
                                 <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                 <button class="btn btn-primary">إضافة للسلة</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
                     <div class="product-tag">
                         <div class="relative">
                             <p class="sale">15%</p>
-                            <span class="material-symbols-outlined icon-fav">
+                            <!-- <span class="material-symbols-outlined icon-fav">
                                 favorite
-                                </span>
+                                </span> -->
                             <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                         </div>
                         <div class="">
                             <p class="text-hint-grey my-3">باتشي</p>
                             <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                             <p class="text-price ">20.00 ر.س</p>
-                            <div class="cart-product">
+                            <!-- <div class="cart-product">
                                 <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                 <button class="btn btn-primary">إضافة للسلة</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
                     <div class="product-tag">
                         <div class="relative">
                             <p class="sale">15%</p>
-                            <span class="material-symbols-outlined icon-fav">
+                            <!-- <span class="material-symbols-outlined icon-fav">
                                 favorite
-                                </span>
+                                </span> -->
                             <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
                         </div>
                         <div class="">
                             <p class="text-hint-grey my-3">باتشي</p>
                             <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
                             <p class="text-price ">20.00 ر.س</p>
-                            <div class="cart-product">
+                            <!-- <div class="cart-product">
                                 <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
                                 <button class="btn btn-primary">إضافة للسلة</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     
                     </div>
-                   
+                    <div class="dot-indicator" id="dot-indicator4"></div>
             </section>
 
             <!--End of تنسيقات الورد-->
-            <section class="px-10 mb-10 sm:px-5 ti:px-3 md:px-8">
+            <section class="px-10 my-10 sm:px-5 ti:px-3 md:px-8">
                 <img src="src/assets/footer-banner.png" />
             </section>
             <footer>
@@ -723,38 +731,7 @@
 
         </main>
         <script src="backend/flowbite/dist/flowbite.min.js"></script>
-        <script>
-            
-  const slides = document.querySelectorAll("#slider > *");
-  const root = document.querySelector("#slider");
- console.log(slides);
-  function getCurrentImage(entries) {
-      const dots = document.querySelectorAll(".dot-indicator-list > li");
-      console.log(dots);
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (entry.intersectionRatio >= 0.75) {
-          //clear filled dot
-          dots.forEach((dot) => dot.classList.remove("filled-dot"));
-          //get index from id name
-          const slideId = entry.target.id;
-          const slideNum = slideId.replace("slide", "");
-
-          dots[slideNum].classList.add("filled-dot");
-        }
-      }
-    });
-  }
-
-  const slideObserver = new IntersectionObserver(getCurrentImage, {
-    root: root,
-    rootMargin: "0px",
-    threshold: [0.75]
-  });
-
-  slides.forEach((slide) => slideObserver.observe(slide));
-
-        </script>
+        <script src="index.js"></script>
     </body>
 
     </html>

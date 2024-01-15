@@ -10,12 +10,12 @@
     body {
         overflow-x: hidden;
     }
-    @media (max-width: 767px) {
+    /* @media (max-width: 767px) {
         body {
             font-size: 14px;
         }
-        /* Additional mobile styles */
-    }
+        Additional mobile styles */
+    
 
     
     /* Tablet styles */
@@ -109,6 +109,67 @@
     background: #766696;
 }
 
+.search ,
+  .search-toggle,
+  .search-cancel {
+     display: block;
+     cursor: pointer;
+     font-size: 1.45rem;
+     line-height: inherit;
+     color: var(--color-black);
+  }
+
+  .search-block {
+     position: fixed;
+     top: 3rem;
+     right: -100%;
+     width: 100%;
+     z-index: 10000;
+     /* padding: rem; */
+     overflow: hidden;
+     background-color: #fff;
+     transition: all 0.35s ease-in-out;
+  }
+
+  .is-active {
+        top: 3rem;
+        right: 0;
+     }
+
+    
+  
+
+  .search-form {
+     display: flex;
+     align-items: center;
+     column-gap: 0.75rem;
+     padding: 0.75rem 1rem;
+  }
+
+  .search-input {
+     display: block;
+     font-family: inherit;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.5;
+     width: 100%;
+     height: auto;
+     padding: 0.65rem 1.25rem;
+     border: none;
+     outline: none;
+     border-radius: 0.25rem;
+     color: var(--color-black);
+     background-color: var(--color-light);
+  }
+
+  .search::-webkit-search-decoration,
+  .search::-webkit-search-cancel-button {
+        display: none;
+        visibility: hidden;
+     }
+  
+
+
 /*
  * But let's hide the middle one.
  */
@@ -156,12 +217,35 @@
   .indicator {
     display: none;
   }
-  #slider {
+  .slider {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
-#slider::-webkit-scrollbar { 
+.slider::-webkit-scrollbar
+ { 
     display: none;  /* Safari and Chrome */
+}
+
+.dot-indicator {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #8572A8;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.active-dot{
+  width: 30px;
+  background-color: #8572A8;
+  border-radius: 3rem;
 }
   
   @supports (scroll-timeline: --name) {
@@ -199,6 +283,9 @@
     .bg-primary{
         background: linear-gradient(177deg, rgba(255,255,255,1) 0%, rgba(222,215,235,1) 60%, rgba(222,215,234,1) 100%);
         background-repeat: no-repeat;
+    }
+    .drop-shadow {
+      box-shadow: 12px 20px 24px 0px rgba(69, 79, 89, 0.08);
     }
 
     .bg-primary-light{
@@ -249,16 +336,16 @@
     .product-img {
        @apply w-20 md:w-14 sm:w-12;
     }
-    html {
-      @apply sm:text-[10px] md:text-[12px];
-    }
+     html {
+      @apply sm:text-[12px] md:text-[12px];
+    } 
 
     .product-card h3 {
         @apply md:text-lg sm:text-[1rem] overflow-x-hidden my-3;
     }
 
     .product-list {
-        @apply flex items-center gap-6 py-10 mb-5 overflow-x-scroll;
+        @apply flex items-center gap-6 pt-10  pb-3 overflow-x-scroll;
     }
 
     .product-tag {
