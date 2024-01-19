@@ -30,46 +30,48 @@ const phoneMenu = document.querySelector("#menuToggle");
 if (searchToggle && searchCancel) {
    searchToggle.addEventListener("click", () => {
       searchBlock.classList.add("is-active");
-      navbarMenu.classList.add('hidden');
-      logo.classList.add('hidden');
-      leftMenu.classList.add('hidden');
-      phoneMenu.classList.add('hidden');
+      navbarMenu.classList.add('opacity-0');
+      logo.classList.add('opacity-0');
+      leftMenu.classList.add('opacity-0');
+      phoneMenu.classList.add('opacity-0');
    });
 
    searchCancel.addEventListener("click", () => {
       searchBlock.classList.remove("is-active");
-      navbarMenu.classList.remove('hidden');
-      logo.classList.remove('hidden');
-      leftMenu.classList.remove('hidden');
-      phoneMenu.classList.remove('hidden');
+      navbarMenu.classList.remove('opacity-0');
+      logo.classList.remove('opacity-0');
+      leftMenu.classList.remove('opacity-0');
+      phoneMenu.classList.remove('opacity-0');
    });
 }
 
-//Dot indicators
-document.addEventListener('DOMContentLoaded', function () {
-    
 
+document.addEventListener('DOMContentLoaded', function () {
+    //Dot indicators
     function setupHorizontalScrollWithIndicator(contentId, indicatorId) {
         const contentContainer = document.getElementById(contentId);
         const dotIndicator = document.getElementById(indicatorId);
     
         // Create dots based on the number of content items
-        for (let i = 0; i < contentContainer.children.length; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            dot.addEventListener('click', function () {
-                scrollToItem(i);
+        if(contentContainer && contentContainer.hasChildNodes()){
+            for (let i = 0; i < contentContainer.children.length; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                dot.addEventListener('click', function () {
+                    scrollToItem(i);
+                });
+                dotIndicator.appendChild(dot);
+            }
+            dotIndicator.children[0].classList.add('active-dot');
+        
+            // Update the active dot when scrolling
+            contentContainer.addEventListener('scroll', function () {
+                const scrollPercentage = contentContainer.scrollLeft / (contentContainer.scrollWidth - contentContainer.clientWidth);
+                const activeDotIndex = Math.round(scrollPercentage * (dotIndicator.children.length - 1));
+                updateActiveDot(activeDotIndex * -1);
             });
-            dotIndicator.appendChild(dot);
         }
-        dotIndicator.children[0].classList.add('active-dot');
-    
-        // Update the active dot when scrolling
-        contentContainer.addEventListener('scroll', function () {
-            const scrollPercentage = contentContainer.scrollLeft / (contentContainer.scrollWidth - contentContainer.clientWidth);
-            const activeDotIndex = Math.round(scrollPercentage * (dotIndicator.children.length - 1));
-            updateActiveDot(activeDotIndex * -1);
-        });
+      
     
         // Function to scroll to a specific item
         function scrollToItem(index) {
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupHorizontalScrollWithIndicator( 'content3', 'dot-indicator3');
     setupHorizontalScrollWithIndicator( 'content4', 'dot-indicator4');
     // Add more setups as needed for additional scrollable sections
+    
     
 });
 

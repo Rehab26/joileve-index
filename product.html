@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,149 +7,542 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/8cafc5136e.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
-        <!--Header-->
-        <div class="bg-light-brand text-white bg-hero-pattern py-3 px-3">
-            <ul class="flex justify-between items-center md:justify-center tablet:justify-between lg:px-10 text-center md:px-3 text-sm">
-                <li class="lg:gap-1 justify-center items-center flex md:hidden text-[12px]">
-                    <embed src="src/assets/car.svg"/> 
-                    <p>توصيل إلى</p>
-                    <embed class="w-[20px]" src="src/assets/flag.svg" /> 
-                    <a href="#" class="space-x-1">الرياض</a>
-                </li>
-                <li>احصل على خصم 20% باستخدام رمز القسيمة craftxtore2023</li>
-                <li class="md:hidden block">دخول / سجل معنا</li>
-            </ul>
-        </div>
-        
-        <header class="md:text-sm px-24 md:px-10 tablet:px-5 sm:px-1">
-            <nav class=" text-black-brand w-full flex justify-between p-8 mt-8 items-center md:text-[14px] top-3">
-                <div id="menuToggle" class="cursor-pointer relative">
-                    <input type="checkbox" class="hidden" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="center" aria-controls="drawer-right-example" />
-                    <div class="hidden sm:block md:block">
-                        <span class="width-1"></span>
-                        <span class="width-2"></span>
-                        <span class="width-3"></span>
-                    </div>
-
-                <ul class="flex justify-start items-center gap-5 sm:hidden md:hidden">
-                    <li class="text-pink-brand">تخفيضات <a><i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li class="cursor-pointer" id="dropdownDefaultButton" data-dropdown-toggle="categories" data-dropdown-trigger="hover">ورد وهدايا
-                        <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </li>
-                    <li class="cursor-pointer" id="tagsBtn" data-dropdown-toggle="tags" data-dropdown-trigger="hover">مناسبات
-                        <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </li>
-                </ul>
-                </div>
-                <div id="categories" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-                      </li>
-                    </ul>
-                </div>
-
-                <div id="tags" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="tagsBtn">
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">عيد زواج</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تهنئة بالمولود</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ألف مبروك للعروسين</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">مبروك التخرج</a>
-                      </li>
-                    </ul>
-                </div>
-
-                <div id="drawer-right-example" class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-full" tabindex="-1" aria-labelledby="drawer-right-label">
-                    <h5 id="drawer-right-label" class="inline-flex items-center mb-4 text-lg font-semibold">
-                   <button type="button" data-drawer-hide="drawer-right-example" aria-controls="drawer-right-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close menu</span>
-                   </button>
-                   <div class="h-[60vh] w-full flex flex-col justify-around items-center gap-5 p-3">
-                    <div class="flex gap-6">
-                        <span class="material-symbols-outlined font-extrabold">
-                            favorite
-                            </span>
-                            <span class="material-symbols-outlined">
-                                search
-                                </span>
-                                <span class="material-symbols-outlined">
-                                    person
-                                    </span>
-                    </div>
-                    <ul class="flex flex-col gap-5 self-center">
-                        <li class="text-pink-brand">تخفيضات <a><i class="fa-solid fa-chevron-down"></i></a></li>
-                        <li class="cursor-pointer" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">ورد وهدايا
-                            <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                            </svg>
-                        </li>
-                        <ul id="dropdown-example" class="hidden py-2 space-y-2 font-normal">
-                            <li>
-                               <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">جميع المنتجات</a>
-                            </li>
-                            <li>
-                               <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">شوكلاتة</a>
-                            </li>
-                            <li>
-                               <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">ورد</a>
-                            </li>
-                      </ul>
-                        <li class="cursor-pointer">مناسبات
-                            <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                            </svg>
-                        </li>
-                    </ul>
-                    <div class="flex gap-3">
-                        <embed src="src/assets/car.svg"/> 
+        <div class="bg-default">
+            <div class="bg-light-brand text-white bg-hero-pattern py-3 px-3">
+                <ul class="flex justify-between items-center md:justify-center tablet:justify-between lg:px-10 text-center md:px-3 text-sm">
+                    <li class="lg:gap-1 justify-center items-center flex md:hidden text-[12px]">
+                        <img src="src/assets/car.svg"/> 
                         <p>توصيل إلى</p>
-                        <embed class="" src="src/assets/flag.svg" /> 
+                        <img class="w-[20px]" src="src/assets/flag.svg" /> 
                         <a href="#" class="space-x-1">الرياض</a>
+                    </li>
+                    <li>احصل على خصم 20% باستخدام رمز القسيمة craftxtore2023</li>
+                    <li class="md:hidden block">دخول / سجل معنا</li>
+                </ul>
+            </div>
+            <header class="py-10">
+                <nav id="fixedNav" class="w-full flex z-50 text-black-brand justify-between p-5 items-center md:text-[14px] md:text-sm px-20 py-5 md:px-10 tablet:px-5 tablet:text-[14px] sm:px-3">
+                    <div id="menuToggle" class="cursor-pointer relative">
+                        <input type="checkbox" class="hidden" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="center" aria-controls="drawer-right-example" />
+                        <div class="hidden sm:block md:block">
+                            <span class="width-1"></span>
+                            <span class="width-2"></span>
+                            <span class="width-3"></span>
+                        </div>
+
+                    <ul id="menu" class="flex justify-start items-center gap-5 sm:hidden md:hidden">
+                        <li class="text-pink-brand">تخفيضات <a><i class="fa-solid fa-chevron-down"></i></a></li>
+                        <li class="cursor-pointer" id="dropdownDefaultButton" data-dropdown-toggle="categories" data-dropdown-trigger="hover">ورد وهدايا
+                            <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                        </li>
+                        <li class="cursor-pointer" id="tagsBtn" data-dropdown-toggle="tags" data-dropdown-trigger="hover">مناسبات
+                            <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                        </li>
+                    </ul>
+                   </div>
+                    <div id="categories" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                          </li>
+                        </ul>
                     </div>
 
-                   </div>
+                    <div id="tags" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="tagsBtn">
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">عيد زواج</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تهنئة بالمولود</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ألف مبروك للعروسين</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">مبروك التخرج</a>
+                          </li>
+                        </ul>
+                    </div>
+
+                    <div id="drawer-right-example" class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-full" tabindex="-1" aria-labelledby="drawer-right-label">
+                        <h5 id="drawer-right-label" class="inline-flex items-center mb-4 text-lg font-semibold">
+                       <button type="button" data-drawer-hide="drawer-right-example" aria-controls="drawer-right-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                          </svg>
+                          <span class="sr-only">Close menu</span>
+                       </button>
+                       <div class="h-[60vh] w-full flex flex-col justify-around items-center gap-5 p-3">
+                        <div class="flex gap-6">
+                            <span class="material-symbols-outlined font-extrabold">
+                                favorite
+                                </span>
+                                
+                                    <span class="material-symbols-outlined">
+                                        person
+                                        </span>
+                        </div>
+                        <ul class="flex flex-col gap-5 self-center">
+                            <li class="text-pink-brand">تخفيضات <a><i class="fa-solid fa-chevron-down"></i></a></li>
+                            <li class="cursor-pointer" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">ورد وهدايا
+                                <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                </svg>
+                            </li>
+                            <ul id="dropdown-example" class="hidden py-2 space-y-2 font-normal">
+                                <li>
+                                   <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">جميع المنتجات</a>
+                                </li>
+                                <li>
+                                   <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">شوكلاتة</a>
+                                </li>
+                                <li>
+                                   <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">ورد</a>
+                                </li>
+                          </ul>
+                            <li class="cursor-pointer">مناسبات
+                                <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                </svg>
+                            </li>
+                        </ul>
+                        <div class="flex gap-3">
+                            <img src="src/assets/car.svg"/> 
+                            <p>توصيل إلى</p>
+                            <img class="" src="src/assets/flag.svg" /> 
+                            <a href="#" class="space-x-1">الرياض</a>
+                        </div>
+
+                       </div>
+                    </div>
+
+                    <img id="logo" class="tablet:w-32 md:w-36 lg:w-48" src="src/assets/logo-img.png" />
+                    <div id="leftMenu" class="flex gap-3">
+                        <button class="py-1 px-3 rounded-lg search-toggle"><img class="search-icon" src="src/assets/Search.svg" /></button>
+                        
+                        <button class="flex space-x-1 justify-center items-center py-3 px-5 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
+                            <div class="absolute -top-3 -right-2 md:top-1 md:-right-2 h-5 w-5 bg-pink-brand rounded-full align-middle text-white text-[12px]">5</div>
+                            <img src="src/assets/cart.svg"/>
+                            <p class="sm:hidden md:hidden lg:block text-light-brand font-semibold">سلة المشتريات</p>
+                        </button>
+
+                        
+                    </div>
+                    <div class="search-block p-3 drop-shadow">
+                        <form class="search-form">
+                            <img class="search-icon" src="src/assets/Search.svg" />
+                           <input type="search" name="search" class="search-input focus:ring-0 p-3 text-lg placeholder:text-[#202020]" placeholder="ما الذي تبحث عنه ؟">
+                           <svg class="w-3 h-3 search-cancel" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                         </svg>
+                        </form>
+                     </div>
+                </nav>
+            </header>
+            <main class="px-28 md:px-8 sm:px-5 ti:px-3">
+
+                <!--Breadscrumb section-->
+                <section class="breadscrumb">
+                    <p>الصفحة الرئيسية </p>
+                    <span>/</span>
+                    <p>باقات ورد هدايا  </p>
+                    <span>/</span>
+                    <p class="breadscrumb-active">شوكولاتة هنوڤيرين</p>
+                </section>
+                <!--End of breadscrumb section-->
+
+                <section class="product-section my-8 flex gap-5 md:block">
+                    <div class="product-section-images">
+                        <div class="main-image-container relative">
+                        <img class="rounded-lg w-[600px]" src="http://127.0.0.1:5500/src/assets/product.jpeg"
+                             alt="Product Image" id="main-image" onclick="openLightbox()">
+                            <button class="prev-button" onclick="changeImage(-1)">
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white/80 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-black dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                            </button>
+                            <button class="next-button" onclick="changeImage(1)">
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white/80 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-black  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="mini-images-container" id="mini-images-container">
+                            <!-- Mini images will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="product-section-content pt-3 flex flex-col gap-8">
+                        <div class="flex justify-between items-center mt-4">
+                            <h1 class="text-3xl font-bold">شوكلاتة هنوڤيرين</h1>
+                            <button class="reward-box flex items-center gap-3 bg-[#FCF4F9] p-3 rounded-lg text-pink-brand">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                                    <path opacity="0.4" d="M4.3335 13.0007C4.3335 8.21418 8.21369 4.33398 13.0002 4.33398H39.0002C43.7865 4.33398 47.6668 8.21418 47.6668 13.0007V39.0006C47.6668 43.787 43.7865 47.6673 39.0002 47.6673H13.0002C8.21369 47.6673 4.3335 43.787 4.3335 39.0006V13.0007Z" fill="#F065A5"/>
+                                    <path d="M17.3335 4.33398H34.6668V20.7699C34.6668 22.7002 32.3331 23.6669 30.9681 22.3019L27.5322 18.8661C26.6861 18.0199 25.3142 18.0199 24.4681 18.8661L21.0322 22.3019C19.6673 23.6669 17.3335 22.7002 17.3335 20.7699V4.33398Z" fill="#F065A5"/>
+                                    <path d="M40.8415 33.7984L39.9999 34.6669L39.1585 33.7984C36.8344 31.4005 33.0666 31.4005 30.7428 33.7984C28.4191 36.1967 28.4191 40.0847 30.7428 42.4826L36.6339 48.5612C38.493 50.4796 41.5071 50.4796 43.3662 48.5612L49.2569 42.4826C51.581 40.0847 51.581 36.1967 49.2569 33.7984C46.9331 31.4005 43.1653 31.4005 40.8415 33.7984Z" fill="#F065A5"/>
+                                </svg>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p class="text-sm">احصل على 23 نقطة</p>
+                                    <p class="text-sm text-black-brand">تعرف على نقاطك</p>
+                                </div>
+                            </button>
+                        </div>
+                        
+                        <div class="-mt-8">
+                            <p class="big-product-price font-bold text-3xl text-light-brand">360 ر.س</p>
+                            <span class="price-hint block text-sm text-text-grey tracking-wider">الأسعار شاملة الضرائب</span>
+                        </div>
+                        <p class="product-description">
+                            اكتشف متعة علبة شوكولاتة فلاوارد كراميل، وهي مجموعة مثيرة مكونة من 20 قطعة فاخرة تعدك بالنعيم الخالص مع كل قضمة. يرافق هذه الهدية الفاخرة عرض مذهل مكون من 20 وردة بنفسجية ملكية،
+                        </p>
+                        <p class="product-dim font-bold text-black-brand">ارتفاع وعرض الباقة 35*35 سم</p>
+                        <div class="product-tags flex gap-5 text-light-brand font-semibold w-[50%] flex-wrap">
+                            <a href="#">باقات ورد هدايا</a>
+                            <a href="#">باقات ورد هدايا</a>
+                            <a href="#">باقات ورد هدايا</a>
+                            <a href="#">باقات ورد هدايا</a>
+                            <a href="#">باقات ورد هدايا</a>
+                            <a href="#">باقات ورد هدايا</a>
+                        </div>
+                        <p class="text-xl">الكمية :</p>
+                        <div class="flex w-[70%] md:w-full gap-5 items-center">
+                            <div class="flex justify-center items-center gap-3">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" onclick="updateProductQuantity(1)">
+                                    add
+                                    </span>
+                                <input id="product-quantity" type="text" value="1" class="w-10 h-10 rounded-lg border-text-grey text-center" disabled/>
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" onclick="updateProductQuantity(-1)">
+                                    remove
+                                    </span>
+                            
+                            </div>
+                            <button class="btn w-[40%] btn-primary flex justify-center items-center gap-3">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" viewBox="0 0 31 32" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.55176 2.11462C3.01674 2.11462 2.58301 2.54835 2.58301 3.08337C2.58301 3.6184 3.01674 4.05212 3.55176 4.05212H6.13509C7.02681 4.05212 7.74967 4.77499 7.74967 5.66671H9.68717C9.68717 3.70495 8.09685 2.11462 6.13509 2.11462H3.55176Z" fill="white"/>
+                                    <path opacity="0.4" d="M7.75 5.66663H23.25C26.1034 5.66663 28.4167 7.97982 28.4167 10.8333V17.2916C28.4167 20.145 26.1034 22.4583 23.25 22.4583H12.9167C10.0632 22.4583 7.75 20.145 7.75 17.2916V5.66663Z" fill="white"/>
+                                    <path d="M12.2705 28.9166C13.3406 28.9166 14.208 28.0492 14.208 26.9791C14.208 25.9091 13.3406 25.0416 12.2705 25.0416C11.2005 25.0416 10.333 25.9091 10.333 26.9791C10.333 28.0492 11.2005 28.9166 12.2705 28.9166Z" fill="white"/>
+                                    <path d="M23.8955 28.9166C24.9656 28.9166 25.833 28.0492 25.833 26.9791C25.833 25.9091 24.9656 25.0416 23.8955 25.0416C22.8255 25.0416 21.958 25.9091 21.958 26.9791C21.958 28.0492 22.8255 28.9166 23.8955 28.9166Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0837 9.86462C18.6187 9.86462 19.0524 10.2984 19.0524 10.8334V13.0938H21.3128C21.8478 13.0938 22.2816 13.5275 22.2816 14.0625C22.2816 14.5975 21.8478 15.0313 21.3128 15.0313H19.0524V17.2917C19.0524 17.8267 18.6187 18.2605 18.0837 18.2605C17.5487 18.2605 17.1149 17.8267 17.1149 17.2917V15.0313H14.8545C14.3195 15.0313 13.8857 14.5975 13.8857 14.0625C13.8857 13.5275 14.3195 13.0938 14.8545 13.0938H17.1149V10.8334C17.1149 10.2984 17.5487 9.86462 18.0837 9.86462Z" fill="white"/>
+                                    </svg>
+                                </span>
+                                أضف إلى السلة 
+                            </button>
+                            <button class="px-3 py-3 rounded-lg bg-[#C0CADB] hover:bg-[#D85B95] active-fav-product">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 36 36" fill="none">
+                                    <path d="M18 8.55387L17.1945 9.33928C17.4063 9.55642 17.6967 9.67887 18 9.67887C18.3033 9.67887 18.5937 9.55642 18.8055 9.33928L18 8.55387ZM19.0276 7.50007L19.833 8.28549L19.0276 7.50007ZM16.9725 7.5001L17.7778 6.71469L16.9725 7.5001ZM5.18089 19.1399L4.34613 19.8941L5.18089 19.1399ZM13.7704 28.6472L12.9356 29.4014L13.7704 28.6472ZM22.2295 28.6472L23.0643 29.4014L22.2295 28.6472ZM30.8191 19.1399L31.6539 19.8941L30.8191 19.1399ZM30.6027 7.50007L29.7972 8.28549L30.6027 7.50007ZM5.3973 7.50009L6.20275 8.2855L5.3973 7.50009ZM25.5 8.62507C24.8787 8.62507 24.375 9.12874 24.375 9.75007C24.375 10.3714 24.8787 10.8751 25.5 10.8751V8.62507ZM27.375 12.7501C27.375 13.3714 27.8787 13.8751 28.5 13.8751C29.1213 13.8751 29.625 13.3714 29.625 12.7501H27.375ZM18.8055 9.33928L19.833 8.28549L18.2221 6.71466L17.1945 7.76847L18.8055 9.33928ZM16.167 8.28552L17.1945 9.33928L18.8055 7.76847L17.7778 6.71469L16.167 8.28552ZM4.34613 19.8941L12.9356 29.4014L14.6052 27.8932L6.01566 18.3859L4.34613 19.8941ZM23.0643 29.4014L31.6539 19.8941L29.9844 18.3857L21.3948 27.8932L23.0643 29.4014ZM29.7972 8.28549C32.4927 11.0497 32.5767 15.5164 29.9844 18.3857L31.6539 19.8941C35.041 16.145 34.9338 10.3303 31.4082 6.71466L29.7972 8.28549ZM31.4082 6.71466C27.7702 2.98395 21.8601 2.98395 18.2221 6.71466L19.833 8.28549C22.5879 5.46034 27.0424 5.46033 29.7972 8.28549L31.4082 6.71466ZM6.20275 8.2855C8.95762 5.46036 13.4121 5.46036 16.167 8.28552L17.7778 6.71469C14.14 2.98396 8.22975 2.98396 4.59184 6.71469L6.20275 8.2855ZM12.9356 29.4014C15.6642 32.4217 20.3358 32.4217 23.0643 29.4014L21.3948 27.8932C19.5595 29.9245 16.4404 29.9245 14.6052 27.8932L12.9356 29.4014ZM4.59184 6.71469C1.06616 10.3303 0.959018 16.1452 4.34613 19.8941L6.01566 18.3859C3.42333 15.5165 3.50734 11.0497 6.20275 8.2855L4.59184 6.71469ZM25.5 10.8751C26.5354 10.8751 27.375 11.7145 27.375 12.7501H29.625C29.625 10.4719 27.7782 8.62507 25.5 8.62507V10.8751Z" fill="white"/>
+                                    </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="product-info">
+                    <div class="mb-4 border-gray-200 dark:border-gray-700">
+                        <ul class="flex items-center text-lg font-normal text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                            <li class=""  role="presentation">
+                                <button class="inline-block px-10 p-4 border-b-2 rounded-t-lg text-light-brand aria-selected:border-light-brand hover:text-gray-600 aria-selected:text-light-brand"
+                                 id="productInfo-tab" data-tabs-target="#productDescription" type="button" role="tab" aria-controls="productDescription" aria-selected="false">وصف المنتج</button>
+                            </li>
+                            <li class="me-2" role="presentation">
+                                <button class="inline-block px-10 p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 aria-selected:border-light-brand aria-selected:text-light-brand" id="review-tab" 
+                                data-tabs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">تقييمات العملاء</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="default-tab-content">
+                        <div class="hidden p-4 rounded-lg" id="productDescription" role="tabpanel" aria-labelledby="productInfo-tab">
+                            <div class="product-description-tab flex flex-col gap-5">
+                                <p class="product-description">اكتشف متعة علبة شوكولاتة فلاوارد كراميل، وهي مجموعة مثيرة مكونة من 20 قطعة فاخرة تعدك بالنعيم الخالص مع كل قضمة. يرافق هذه الهدية الفاخرة عرض مذهل مكون من 20 وردة بنفسجية ملكية، مرتبة بأناقة في مزهرية زجاجية مربعة. تكمل الألوان الغنية للشوكولاتة بشكل مثالي الألوان العميقة للورود، مما يخلق سيمفونية بصرية وتذوق الطعام. هذا الاقتران هو احتفال بالرفاهية والجمال، وهو هروب جميل إلى عالم يلتقي فيه ثراء الشوكولاتة مع الجاذبية الخالدة للأزهار البنفسجية . سواء أكان موهوبًا أو مستمتعًا به، فإن هذه المجموعة هي وليمة حقيقية للحواس، وتحول أي لحظة إلى احتفال فاخر.</p>
+                                <h3 class="tab-title flex gap-3">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                                        <path opacity="0.4" d="M2.10254 5.0944C2.10254 3.62164 3.29645 2.42773 4.76921 2.42773H11.3337C12.8064 2.42773 14.0003 3.62164 14.0003 5.0944V11.6589C14.0003 13.1316 12.8064 14.3255 11.3336 14.3255H4.76921C3.29645 14.3255 2.10254 13.1316 2.10254 11.6588V5.0944Z" fill="#947FBB"/>
+                                        <path opacity="0.4" d="M18 20.9921C18 19.5194 19.1939 18.3254 20.6667 18.3254H27.2311C28.7039 18.3254 29.8977 19.5194 29.8977 20.9921V27.5566C29.8977 29.0293 28.7039 30.2233 27.2311 30.2233H20.6667C19.1939 30.2233 18 29.0293 18 27.5566V20.9921Z" fill="#947FBB"/>
+                                        <path d="M8.05142 30.2232C11.3369 30.2232 14.0003 27.5598 14.0003 24.2743C14.0003 20.9888 11.3369 18.3254 8.05142 18.3254C4.76594 18.3254 2.10254 20.9888 2.10254 24.2743C2.10254 27.5598 4.76594 30.2232 8.05142 30.2232Z" fill="#947FBB"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.0003 2.94116C24.5526 2.94116 25.0003 3.38888 25.0003 3.94116V7.2745H28.3337C28.8859 7.2745 29.3337 7.72222 29.3337 8.2745C29.3337 8.82678 28.8859 9.2745 28.3337 9.2745H25.0003V12.6078C25.0003 13.1601 24.5526 13.6078 24.0003 13.6078C23.4481 13.6078 23.0003 13.1601 23.0003 12.6078V9.2745H19.667C19.1147 9.2745 18.667 8.82678 18.667 8.2745C18.667 7.72222 19.1147 7.2745 19.667 7.2745H23.0003V3.94116C23.0003 3.38888 23.4481 2.94116 24.0003 2.94116Z" fill="#947FBB"/>
+                                        </svg></span>
+                                    محتويات العبوة</h3>
+                                <ul class="product-content">
+                                    <li>علبة شوكولاتة فلاورد كراميل: 20 قطعة</li>
+                                    <li>جوري بنفسجي: 20</li>
+                                    <li>مزهرية زجاجية مربعة</li>
+                                </ul>
+                                <h3 class="tab-title flex items-center gap-3">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                                            <path opacity="0.4" d="M29.3337 16.2745C29.3337 23.6382 23.3641 29.6078 16.0003 29.6078C8.63653 29.6078 2.66699 23.6382 2.66699 16.2745C2.66699 8.9107 8.63653 2.94116 16.0003 2.94116C23.3641 2.94116 29.3337 8.9107 29.3337 16.2745Z" fill="#947FBB"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 9.94116C16.5523 9.94116 17 10.3889 17 10.9412V12.2745C17 12.8268 16.5523 13.2745 16 13.2745C15.4477 13.2745 15 12.8268 15 12.2745V10.9412C15 10.3889 15.4477 9.94116 16 9.94116ZM16 14.6078C16.5523 14.6078 17 15.0556 17 15.6078V21.6078C17 22.1601 16.5523 22.6078 16 22.6078C15.4477 22.6078 15 22.1601 15 21.6078V15.6078C15 15.0556 15.4477 14.6078 16 14.6078Z" fill="#947FBB"/>
+                                            </svg>
+                                    </span>
+                                    ملاحظات</h3>
+                                <p class="text-hint">يرجى الانتباه إلى أن العناصر الغذائية لدينا قد تحتوي أو تلامست مع مسببات الحساسية الشائعة، مثل: منتجات الألبان، البيض، القمح، أو الفول السوداني.</p>
+                            </div>
+                        </div>
+                        <div class="hidden p-4 rounded-lg" id="review" role="tabpanel" aria-labelledby="review-tab">
+                            <div class="product-reviews-tab flex flex-col gap-5">
+                                
+                                <!-- //first review -->
+                                <div class="product-review flex flex-col gap-3 p-5 border-b-[0.5px] border-[#d1d5db]">
+                                    <div class="product-review-header flex gap-5  py-3 justify-start items-center">
+                                        <img class="rounded-full w-[30px] h-[30px] bg-light-pink" src="" />
+                                        <p class="review-name text-lg font-bold">أحلام بخاري
+                                            <span class="date block text-xs text-text-grey font-light">20 أكتوبر 2023</span>
+                                        </p>
+                                        <div class="is-buying-product py-3 px-5 flex items-center gap-3 rounded-lg bg-light-pink text-text-grey">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                                                <path opacity="0.4" d="M11.559 1.95065C6.29958 1.95065 2.03598 6.21426 2.03598 11.4737C2.03598 16.7331 6.29958 20.9967 11.559 20.9967C16.8184 20.9967 21.082 16.7331 21.082 11.4737C21.082 6.21426 16.8184 1.95065 11.559 1.95065Z" fill="#8572A8"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5596 2.37208C21.8528 2.63595 21.8766 3.08755 21.6127 3.38075L13.2918 12.5203C12.3638 13.5515 10.7926 13.68 9.70928 12.8134L6.35109 10.1268C6.04307 9.88037 5.99313 9.43092 6.23955 9.1229C6.48595 8.81488 6.93541 8.76494 7.24344 9.01136L10.6017 11.6979C11.094 12.0919 11.8082 12.0334 12.2301 11.5647L20.551 2.42516C20.8148 2.13196 21.2664 2.10819 21.5596 2.37208Z" fill="#8572A8"/>
+                                            </svg>
+                                            <span>قام بشراء المنتج</span>
+                                        </div>
+                                    </div>
+                                    <p class="product-review-content w-[70%] sm:[w-90%] text-base mb-3">
+                                        اكتشف متعة علبة شوكولاتة فلاوارد كراميل، وهي مجموعة مثيرة مكونة من 20 قطعة فاخرة تعدك بالنعيم الخالص مع كل قضمة. يرافق هذه الهدية الفاخرة عرض مذهل مكون من 20 وردة بنفسجية ملكية،
+                                    </p>
+                                </div>
+
+                                <!--Second review-->
+                                <div class="product-review p-5 border-b-[0.5px] border-[#d1d5db]">
+                                    <div class="product-review-header flex gap-5  py-3 justify-start items-center">
+                                        <img class="rounded-full w-[30px] h-[30px] bg-light-pink" src="" />
+                                        <p class="review-name text-lg font-bold">رحاب البشري
+                                            <span class="date block text-xs text-text-grey font-light">20 أكتوبر 2023</span>
+                                        </p>
+                                        <div class="is-buying-product py-3 px-5 flex items-center gap-3 rounded-lg bg-light-pink text-text-grey">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                                                <path opacity="0.4" d="M11.559 1.95065C6.29958 1.95065 2.03598 6.21426 2.03598 11.4737C2.03598 16.7331 6.29958 20.9967 11.559 20.9967C16.8184 20.9967 21.082 16.7331 21.082 11.4737C21.082 6.21426 16.8184 1.95065 11.559 1.95065Z" fill="#8572A8"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5596 2.37208C21.8528 2.63595 21.8766 3.08755 21.6127 3.38075L13.2918 12.5203C12.3638 13.5515 10.7926 13.68 9.70928 12.8134L6.35109 10.1268C6.04307 9.88037 5.99313 9.43092 6.23955 9.1229C6.48595 8.81488 6.93541 8.76494 7.24344 9.01136L10.6017 11.6979C11.094 12.0919 11.8082 12.0334 12.2301 11.5647L20.551 2.42516C20.8148 2.13196 21.2664 2.10819 21.5596 2.37208Z" fill="#8572A8"/>
+                                            </svg>
+                                            <span>قام بشراء المنتج</span>
+                                        </div>
+                                    </div>
+                                    <p class="product-review-content w-[70%] sm:[w-90%] text-base mb-3 py-3">
+                                        اكتشف متعة علبة شوكولاتة فلاوارد كراميل، وهي مجموعة مثيرة مكونة من 20 قطعة فاخرة تعدك بالنعيم الخالص مع كل قضمة. يرافق هذه الهدية الفاخرة عرض مذهل مكون من 20 وردة بنفسجية ملكية،
+                                    </p>
+                                </div>
+
+                                
+
+
+
+                                
+                            </div>
+                            <div class="user-review my-10 flex flex-col gap-5">
+                                <h2 class="text-2xl font-bold ">اترك مراجعتك</h2>
+                                <textarea class="h-32 p-5 resize-none text-lg w-[70%] sm:w-full rounded-md border border-[#F2F2F7]
+                                placeholder:italic placeholder:text-slate-400 border-slate-300 shadow-sm 
+                                focus:outline-none focus:border-sky-500 focus:ring-light-brand focus:ring-1" placeholder="اكتب رأيك بحرية بالمنتج..."></textarea>
+                                <button class="btn btn-primary w-[30%] py-3">ارسل المراجعة</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                <section class="my-20">
+                    <div class="flex justify-between items-center">
+                        <div class="tablet:flex-[1] md:flex-[1] sm:flex-[1] ti:flex-[1]">
+                            <h2 class="primary-heading flex justify-between items-center">منتجات قد تعجبك
+                                
+                            </h2>
+                            <p class="py-2 sm:py-0 md:py-0 ti:py-0">لدي جويليف تشكيلة كبيره من شكولاتة الضيافة مع ورد اختار بينها</p>
+                        </div>
+                        <div class="flex gap-2 items-center justify-center tablet:hidden md:hidden sm:hidden ti:hidden">
+                             <div class="icon-btn">
+                                <span class="material-symbols-outlined">
+                                    arrow_forward_ios
+                                    </span>
+                            </div>
+                            <div class="icon-btn">
+                                <span class="material-symbols-outlined">
+                                    arrow_back_ios
+                                    </span>
+                            </div> 
+                    </div>
+                    </div>
+                    <div class="slider product-list" id="content1">
+                        <div class="product-tag">
+                            <div class="relative">
+                                <p class="sale">خصم 15%</p>
+                                <!-- <span class="material-symbols-outlined icon-fav">
+                                    favorite
+                                    </span> -->
+                                <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
+                            </div>
+                            <div class="">
+                                <p class="text-hint-grey my-3">باتشي</p>
+                                <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
+                                <p class="text-price ">20.00 ر.س</p>
+                                <!-- <div class="cart-product">
+                                    <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
+                                    <button class="btn btn-primary">إضافة للسلة</button>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="product-tag">
+                            <div class="relative">
+                                <p class="sale">15%</p>
+                                <!-- <span class="material-symbols-outlined icon-fav">
+                                    favorite
+                                    </span> -->
+                                <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
+                            </div>
+                            <div class="">
+                                <p class="text-hint-grey my-3">باتشي</p>
+                                <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
+                                <p class="text-price ">20.00 ر.س</p>
+                                <!-- <div class="cart-product">
+                                    <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
+                                    <button class="btn btn-primary">إضافة للسلة</button>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="product-tag">
+                            <div class="relative">
+                                <p class="sale">15%</p>
+                                <!-- <span class="material-symbols-outlined icon-fav">
+                                    favorite
+                                    </span> -->
+                                <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
+                            </div>
+                            <div class="">
+                                <p class="text-hint-grey my-3">باتشي</p>
+                                <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
+                                <p class="text-price ">20.00 ر.س</p>
+                                <!-- <div class="cart-product">
+                                    <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
+                                    <button class="btn btn-primary">إضافة للسلة</button>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="product-tag">
+                            <div class="relative">
+                                <p class="sale">15%</p>
+                                <!-- <span class="material-symbols-outlined icon-fav">
+                                    favorite
+                                    </span> -->
+                                <img class="product-tag_img" src="src/assets/flower-gift.jpeg" />
+                            </div>
+                            <div class="">
+                                <p class="text-hint-grey my-3">باتشي</p>
+                                <h3 class="product-tag_name">شوكلاتة هنوفيرين</h3>
+                                <p class="text-price ">20.00 ر.س</p>
+                                <!-- <div class="cart-product">
+                                    <input class="my-2 w-[30%] border focus:outline-none border-[#C9C9C9] text-grey-dark px-3 py-1" value="1" type="number" id="quantity" name="quantity">
+                                    <button class="btn btn-primary">إضافة للسلة</button>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="dot-indicator" id="dot-indicator1"></div>
+                       
+
+                        
+                        
+
+
+                </section>
+            </main>
+            <section class="px-10 my-10 sm:px-5 ti:px-3 md:px-8">
+                <img src="src/assets/footer-banner.png" />
+            </section>
+            <footer>
+                <div class="flex justify-evenly gap-10 items-center flex-wrap">
+                    <div class="flex justify-between items-center gap-2">
+                        <img class="mini-img" src="src/assets/card.svg" />
+                        <div class="">
+                            <p class="secondary-heading">الدفع الآمن</p>
+                            <p class="description">يتم قبول جميع أنواع البطاقات</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-2 ">
+                        <img class="mini-img" src="src/assets/service.svg" />
+                        <div>
+                            <p class="secondary-heading">دعم 24/7</p>
+                            <p class="description">دعم فني متواصل مع الفريق</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-2">
+                        <img class="mini-img" src="src/assets/money.svg" />
+                        <div>
+                            <p class="secondary-heading">ضمان المال</p>
+                            <p class="description">ارجاع اموالك عند الخطأ</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-2">
+                        <img class="mini-img" src="src/assets/delivery.svg" />
+                        <div>
+                            <p class="secondary-heading">أرخص توصيل</p>
+                            <p class="description">اقل تكلف توصيل لباب بيتك</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="px-10 py-20 lg:p-5 md:p-3 sm:p-1 ti:p-1">
+                    <div class="flex justify-between px-2 items-center flex-wrap">
+                        <ul class="flex gap-5 items-center py-5 text-sm">
+                            <li><a href="#">سياسة الخصوصية</a></li>
+                            <li><a href="#">إتفاقية الاستخدام</a></li>
+                            <li><a href="#">سياسة الإلغاء والاسترداد</a></li>
+                        </ul>
+                        <div class="flex gap-5 items-center">
+                            <!-- <div class="w-[100px] h-[65px] px-4 py-2 bg-light-brand rounded-lg bg-opacity-5"><img src="src/assets/tmara.png" /></div> -->
+                            <div class="w-[100px] h-[65px] md:w-[60px] md:h-[35px] md:px-2 px-4 py-2 bg-light-brand rounded-lg bg-opacity-5"><img src="src/assets/mc.svg" /></div>
+                            <div class="w-[100px] h-[65px] md:w-[60px] md:h-[35px] md:px-2 px-4 py-2 bg-light-brand rounded-lg bg-opacity-5"><img src="src/assets/visa.svg" /></div>
+                            <div class="w-[100px] h-[65px] md:w-[60px] md:h-[35px] md:px-2 px-4 py-2 bg-light-brand rounded-lg bg-opacity-5"><img src="src/assets/applepay.svg" /></div>
+                        </div>
+                    </div>
 
-                <img class="sm:w-24 tablet:w-32 md:w-32 align-top" src="src/assets/logo-img.png" />
-                <button class="flex space-x-1 justify-center items-center py-3 px-10 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
-                    <div class="absolute -top-3 -right-2 md:top-1 md:-right-2 h-5 w-5 bg-pink-brand rounded-full align-middle text-white text-[12px]">5</div>
-                    <embed src="src/assets/cart.svg"/>
-                    <p class="sm:hidden md:hidden lg:block">سلة المشتريات</p>
-                </button>
-            </nav>
-        </header>
-
-
-        <!--End of header-->
-
-
-
-        <script src="backend/flowbite/dist/flowbite.min.js"></script>
+                    
+                    <div class="flex justify-between gap-5 items-center my-10 px-3">
+                        <img src="src/assets/logo.svg" class="sm:w-[90px] md:w-[90px] ti:w-[60px] mb-3" />
+                        <div class="flex gap-[2px] my-3">
+                            <a href=""><img class="mini-img" src="src/assets/twitter.svg" /></a>
+                            <a href=""><img class="mini-img" src="src/assets/linked.svg" /></a>
+                            <a href=""><img class="mini-img" src="src/assets/insta.svg" /></a>
+                            <a href=""><img class="mini-img" src="src/assets/facebook.svg" /></a>
+                        </div>
+                    </div>
+                    <p class="font-bold md:text-[10px] lg:text-sm text-center">جميع الحقوق محفوظة متجر جويليف 2023  </p>
+                </div>
+            </footer>
+        </div>
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content">
+                <span class="close-button" onclick="closeLightbox()">&times;</span>
+                <img src="" class="max-w-full max-h-full block m-auto" alt="Product Image" id="lightbox-image">
+            </div>
+        </div>
+            <script src="backend/flowbite/dist/flowbite.min.js"></script>
+            <script src="product.js"></script>
+            <script src="index.js"></script>
     </body>
+    </html>

@@ -50,6 +50,7 @@ module.exports = {
       'gray-dark': '#959EAD',
       'gray': '#959EAD',
       'gray-light': '#d3dce6',
+      'dark-blue':'#1D293F'
     },
     extend: {},
   },
