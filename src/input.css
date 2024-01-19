@@ -480,12 +480,18 @@
     .breadscrumb {
       @apply flex gap-3 text-text-grey;
     }
-    
+
     .breadscrumb-active {
       @apply text-black;
     }
     .search-icon {
       @apply w-9;
+    }
+    .btn-default {
+      @apply p-1 px-6 text-center bg-light-brand text-white rounded-lg flex items-center my-3  hover:hover:bg-opacity-90 gap-3;
+    }
+    .default-heading {
+      @apply font-bold text-lg text-light-brand;
     }
     
 
