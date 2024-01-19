@@ -480,6 +480,7 @@
     .breadscrumb {
       @apply flex gap-3 text-text-grey;
     }
+    
     .breadscrumb-active {
       @apply text-black;
     }

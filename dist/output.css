@@ -2015,42 +2015,6 @@ li a:hover {
   top: 1.25rem;
 }
 
-.left-\[0\.12px\] {
-  left: 0.12px;
-}
-
-.left-\[140\.39px\] {
-  left: 140.39px;
-}
-
-.left-\[15\.24px\] {
-  left: 15.24px;
-}
-
-.left-\[157\.21px\] {
-  left: 157.21px;
-}
-
-.left-\[18\.80px\] {
-  left: 18.80px;
-}
-
-.top-\[14\.23px\] {
-  top: 14.23px;
-}
-
-.top-\[283\.75px\] {
-  top: 283.75px;
-}
-
-.top-\[305\.99px\] {
-  top: 305.99px;
-}
-
-.top-\[337\.12px\] {
-  top: 337.12px;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -2317,12 +2281,12 @@ li a:hover {
   height: 100vh;
 }
 
-.h-64 {
-  height: 16rem;
+.h-\[20px\] {
+  height: 20px;
 }
 
-.h-96 {
-  height: 24rem;
+.h-\[40px\] {
+  height: 40px;
 }
 
 .max-h-full {
@@ -2437,20 +2401,8 @@ li a:hover {
   width: 100%;
 }
 
-.w-52 {
-  width: 13rem;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
-.w-40 {
-  width: 10rem;
+.w-\[40px\] {
+  width: 40px;
 }
 
 .max-w-2xl {
@@ -2740,14 +2692,6 @@ li a:hover {
 
 .rounded-t-lg {
   border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-.rounded-tl-lg {
-  border-top-left-radius: 0.5rem;
-}
-
-.rounded-tr-lg {
   border-top-right-radius: 0.5rem;
 }
 
@@ -3086,10 +3030,6 @@ li a:hover {
 
 .align-middle {
   vertical-align: middle;
-}
-
-.font-\[\'Almarai\'\] {
-  font-family: 'Almarai';
 }
 
 .text-2xl {

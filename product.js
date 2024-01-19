@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const productQuantity = $('#product-quantity');
 
     // Add your image URLs here
-    const imageUrls = ['http://127.0.0.1:5500/src/assets/product.jpeg', 'http://127.0.0.1:5500/src/assets/product2.jpeg' , 'http://127.0.0.1:5500/src/assets/women.png'];
+    const imageUrls = ['https://media.bleems.com/flowers/379382270823230013252200_item.jpg', 'https://media.bleems.com/flowers/379382270823230013252200_item.jpg' , 'https://media.bleems.com/flowers/379382270823230013107478_item.jpg'];
 
     // Dynamically create mini images and add them to the container
     imageUrls.forEach((imageUrl, index) => {
