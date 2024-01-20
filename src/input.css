@@ -493,6 +493,13 @@
     .default-heading {
       @apply font-bold text-lg text-light-brand;
     }
+    .input-text {
+      @apply rounded-lg border p-3 border-system-grey focus:outline-none focus:border-system-grey focus:ring-light-brand;
+    }
+    .input-checkbox {
+      @apply w-4 h-4 border border-gray-300 rounded-full bg-gray-50 focus:ring-light-brand
+        checked:bg-light-brand;
+    }
     
 
     

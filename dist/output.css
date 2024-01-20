@@ -1924,6 +1924,44 @@ li a:hover {
   color: rgb(133 114 168 / var(--tw-text-opacity));
 }
 
+.input-text {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 234 / var(--tw-border-opacity));
+  padding: 0.75rem;
+}
+
+.input-text:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 234 / var(--tw-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(133 114 168 / var(--tw-ring-opacity));
+}
+
+.input-checkbox {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.input-checkbox:checked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(133 114 168 / var(--tw-bg-opacity));
+}
+
+.input-checkbox:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(133 114 168 / var(--tw-ring-opacity));
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2068,6 +2106,10 @@ li a:hover {
   margin: 0.75rem;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -2130,6 +2172,10 @@ li a:hover {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.-mt-3 {
+  margin-top: -0.75rem;
 }
 
 .-mt-8 {
@@ -2300,10 +2346,6 @@ li a:hover {
   height: 40px;
 }
 
-.h-\[50vh\] {
-  height: 50vh;
-}
-
 .h-\[60vh\] {
   height: 60vh;
 }
@@ -2454,6 +2496,18 @@ li a:hover {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-\[70\%\] {
+  max-width: 70%;
+}
+
+.max-w-\[60\%\] {
+  max-width: 60%;
+}
+
+.max-w-\[40\%\] {
+  max-width: 40%;
 }
 
 .flex-1 {
@@ -3070,6 +3124,10 @@ li a:hover {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
 }
 
 .text-center {
@@ -3740,16 +3798,20 @@ li a:hover {
     width: 100%;
   }
 
+  .md\:max-w-\[85\%\] {
+    max-width: 85%;
+  }
+
   .md\:max-w-lg {
     max-width: 32rem;
   }
 
-  .md\:max-w-xs {
-    max-width: 20rem;
-  }
-
   .md\:flex-\[1\] {
     flex: 1;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
   }
 
   .md\:justify-center {
