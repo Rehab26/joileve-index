@@ -1,10 +1,12 @@
 
 //Make menu fixed when scrolling down
 $(document).scroll(function() {
-    var y = $(document).scrollTop(), //get page y value 
+    var y = $(document).scrollTop(),
+    screen = window.screen.height, //get page y value 
         header = $("#fixedNav");
         search = $(".search-block"); 
-    if(y >= 400)  {
+    console.log('Sceen height: ' , y , screen);
+    if(y >= 200)  {
         header.css({position: "fixed", "top" : "0", "left" : "0"});
         header.css("background" , "#fff");
         header.css("box-shadow" , "16px 16px 44px 0px rgba(0, 0, 0, 0.05)")

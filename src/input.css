@@ -505,6 +505,39 @@
        aria-selected:border-light-brand aria-selected:text-light-brand
       bg-[#F2F2F7] text-black hover:bg-opacity-80 hover:text-light-brand aria-selected:hover:text-light-brand font-semibold;
     }
+    .product-price {
+      @apply text-gray-500 line-through mb-1;
+    }
+    .sale-price {
+      @apply text-xl font-semibold text-light-brand;
+    }
+    .product-fav-icon {
+      @apply absolute top-1 left-1  text-white rounded-md px-2 py-1 text-xs;
+    }
+    .product-fav-icon svg {
+      @apply fill-[#C0CADB] hover:fill-pink-brand cursor-pointer;
+    }
+    .product-fav-icon-active {
+      @apply fill-pink-brand hover:fill-[#c0c0c0];
+    }
+    .product-sale-tag {
+      @apply absolute top-2 right-1 bg-pink-brand text-white rounded-md px-2 py-1 text-xs;
+    }
+    .product-container {
+      @apply cursor-pointer pb-5;
+    }
+    .product-container-name {
+      @apply text-lg font-bold mb-1;
+    }
+    .product-hint {
+      @apply block text-xs text-[#959EAD] mt-4 font-light;
+    }
+    .product-container:hover .product-container-name, .product-hint {
+      @apply hidden;
+    }
+    .product-container:hover #add-to-cart {
+      @apply block;
+    }
     
 
     
