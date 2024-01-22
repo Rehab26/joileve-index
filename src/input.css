@@ -10,6 +10,11 @@
     body {
         overflow-x: hidden;
     }
+    @media (pointer:coarse) {
+      #add-to-cart {
+        display: block;
+      }
+    }
     /* @media (max-width: 767px) {
         body {
             font-size: 14px;
@@ -524,7 +529,7 @@
       @apply absolute top-2 right-1 bg-pink-brand text-white rounded-md px-2 py-1 text-xs;
     }
     .product-container {
-      @apply cursor-pointer pb-5;
+      @apply cursor-pointer pb-5 mb-4;
     }
     .product-container-name {
       @apply text-lg font-bold mb-1;
@@ -533,10 +538,13 @@
       @apply block text-xs text-[#959EAD] mt-4 font-light;
     }
     .product-container:hover .product-container-name, .product-hint {
-      @apply hidden;
+      @apply block;
     }
     .product-container:hover #add-to-cart {
       @apply block;
+    }
+    #add-to-cart {
+      @apply hidden btn btn-primary;
     }
     
 

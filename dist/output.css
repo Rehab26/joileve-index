@@ -912,6 +912,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (pointer:coarse) {
+  #add-to-cart {
+    display: block;
+  }
+}
+
 /* @media (max-width: 767px) {
         body {
             font-size: 14px;
@@ -2024,6 +2030,7 @@ li a:hover {
 }
 
 .product-container {
+  margin-bottom: 1rem;
   cursor: pointer;
   padding-bottom: 1.25rem;
 }
@@ -2046,11 +2053,38 @@ li a:hover {
 }
 
 .product-container:hover .product-container-name, .product-hint {
-  display: none;
+  display: block;
 }
 
 .product-container:hover #add-to-cart {
   display: block;
+}
+
+#add-to-cart {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(133 114 168 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#add-to-cart:hover {
+  --tw-bg-opacity: 0.8;
+}
+
+#add-to-cart {
+  display: none;
 }
 
 .sr-only {
@@ -3906,10 +3940,6 @@ li a:hover {
     flex: 1;
   }
 
-  .ti\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .ti\:flex-col {
     flex-direction: column;
   }
@@ -3924,6 +3954,11 @@ li a:hover {
 
   .ti\:p-3 {
     padding: 0.75rem;
+  }
+
+  .ti\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .ti\:px-2 {
