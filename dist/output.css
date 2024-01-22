@@ -1553,7 +1553,7 @@ body {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 270px) {
   .product-tag_name {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -1613,7 +1613,7 @@ body {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 270px) {
   .secondary-heading {
     font-size: 0.50rem;
   }
@@ -1810,7 +1810,7 @@ li a:hover {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 270px) {
   .event-card {
     height: 120;
     width: 80px;
@@ -1833,7 +1833,7 @@ li a:hover {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 270px) {
   .event-card img {
     width: 50%;
   }
@@ -3893,7 +3893,7 @@ li a:hover {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 270px) {
   .ti\:hidden {
     display: none;
   }

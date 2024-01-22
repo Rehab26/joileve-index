@@ -31,7 +31,7 @@ module.exports = {
       'md': {'max': '767px'},
 
       'sm': {'max': '639px'},
-      'ti':{'max': '320px'},
+      'ti':{'max': '270px'},
       'tablet':{'min': '768px' , 'max' : '1022px'}
     },
     colors: {
