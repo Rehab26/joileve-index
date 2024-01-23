@@ -114,6 +114,7 @@
     background: #766696;
 }
 
+
 .search ,
   .search-toggle,
   .search-cancel {
@@ -339,7 +340,7 @@
         background-repeat: no-repeat;
     }
     .bg-default {
-      background: linear-gradient(180deg, #EFECF5 0%, rgba(255, 255, 255, 0.00) 100%);
+      background: linear-gradient(180deg, #EFECF5 0%, rgba(255, 255, 255, 0.00) 20%);
     }
     .drop-shadow {
       box-shadow: 12px 20px 24px 0px rgba(69, 79, 89, 0.08);
@@ -463,10 +464,13 @@
         @apply text-light-brand text-lg;
     }
     .btn {
-        @apply w-full py-2 block outline-none text-lg text-center rounded-md my-2;
+        @apply py-2 px-5 block outline-none text-lg text-center rounded-md my-2;
     }
     .btn-primary {
         @apply text-white bg-light-brand hover:bg-opacity-80;
+    }
+    .btn-full-w {
+      @apply w-full;
     }
     .event-card {
        @apply flex flex-col gap-3 hover:bg-light-brand
@@ -545,6 +549,25 @@
     }
     #add-to-cart {
       @apply hidden btn btn-primary;
+    }
+    .product-list-filters {
+      @apply p-4 bg-white rounded-lg border border-system-grey w-[400px] h-fit flex flex-col gap-4 tablet:p-0 md:p-0
+      tablet:flex tablet:w-full md:flex md:gap-8 md:w-full md:border-none tablet:border-none;
+    }
+    .badge {
+      @apply text-xs font-medium me-2 px-2.5 py-0.5 rounded text-white;
+    }
+    .badge-default {
+      @apply bg-[#F4F2F8] text-light-brand;
+    }
+    .badge-red {
+      @apply bg-[#FFF5F5] text-[#9C0000];
+    }
+    .badge-pink {
+      @apply bg-pink-brand;
+    }
+    .badge-purple{
+      @apply bg-light-brand;
     }
     
 

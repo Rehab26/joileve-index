@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
-        <div class="">
+        <div class="bg-default">
             <div class="bg-light-brand text-white bg-hero-pattern py-3 px-3">
                 <ul class="flex justify-between items-center md:justify-center tablet:justify-between lg:px-10 text-center md:px-3 text-sm">
                     <li class="lg:gap-1 justify-center items-center flex md:hidden text-[12px]">
@@ -158,97 +158,329 @@
                 </nav>
             </header>
             <main class="px-28 tablet:px-10 md:px-8 sm:px-3 ti:px-1">
+
+                
+                <div id="filter-modal" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+                     <h5 id="drawer-label" class="inline-flex items-center gap-4 mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
+                        <span class="material-symbols-outlined">
+                            tune
+                            </span>
+                        تصفية</h5>
+                    <button type="button" data-drawer-hide="filter-modal" aria-controls="filter-modal" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+                       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 14 14">
+                          <path stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                       </svg>
+                       <span class="sr-only border">Close menu</span>
+                    </button>
+                    <div class="flex h-full flex-col justify-start gap-4 my-5">
+                        <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="color">
+                                    الألوان
+                                </label>
+                                 <select class="md:block hidden appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="color">
+                                    <option>Red</option>
+                                    <option>Blue</option>
+                                    <option>Green</option>
+                                </select>
+
+                                <div class="flex gap-2 md:hidden flex-wrap">
+                                    <div class="rounded-full bg-red-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-green-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-blue-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-pink-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-yellow-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-purple-500 w-8 h-8"></div>
+                                </div>
+                        </div>
+
+                        <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="type">
+                                    المناسبات
+                                </label>
+                                
+                                <div class="flex flex-col gap-2 justify-center">
+                                <div>
+                                    <!-- <div class="round">
+                                        <span>عيد ميلاد</span>
+                                        <input type="checkbox" checked id="tag1" />
+                                        <label for="tag1"></label>
+                                    </div> -->
+                                    <input id="tag2" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag2" class="ms-2 text-sm">مبروك الزواج</label>
+                                </div>
+                                <div>
+                                    <input id="tag3" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag3" class="ms-2 text-sm">عيد الحب</label>
+                                </div>
+                                <div>
+                                    <input id="tag4" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag4" class="ms-2 text-sm">عيد الأم</label>
+                                </div>
+                                <div>
+                                    <input id="tag5" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag5" class="ms-2 text-sm font-normal">مبروك المنزل </label>
+                                </div>
+                                </div>
+                                
+                        </div>
+
+                        <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
+                                    السعر
+                                </label>
+                                <select class="md:block tablet:block hidden appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="price">
+                                    <option value="">All prices</option>
+                                    <option value="50">Less than $50</option>
+                                    <option value="100">Less than $100</option>
+                                    <option value="150">Less than $150</option>
+                                </select>
+
+                                <div class="flex flex-col gap-5 justify-center">
+                                    <div>
+                                        <input id="price1" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price1" class="ms-2 text-sm">أقل من 200 ر.س</label>
+                                    </div>
+                                    <div>
+                                        <input id="price2" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price2" class="ms-2 text-sm">من 250 ر.س إلى 350 ر.س</label>
+                                    </div>
+                                    <div>
+                                        <input id="price3" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price3" class="ms-2 text-sm">من 350 ر.س إلى 500 ر.س</label>
+                                    </div>
+                                    <div>
+                                        <input id="price4" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price4" class="ms-2 text-sm font-normal">600 ر.س و أكثر  </label>
+                                    </div>
+                                    </div>
+                        </div>
+
+                    </div>
+                       
+                    
+                 </div>
+
+
                 <h2 class="title-header text-3xl text-black-brand font-[400]">بوكسات الشكولاتة
                     <span class="text-sm font-normal mx-3">/ 38 منتج </span>
                 </h2>
-                <div class="product-list-page flex gap-5 my-10 md:block tablet:block">
-                    <section class="product-list-filters bg-white rounded-lg w-80">
-                        There are filters!!
+                <div class="product-list-page flex gap-2 my-10 md:block tablet:block">
+                    <section class="product-list-filters">
+                        <button class="btn btn-default justify-center items-center btn-full-w py-3 hidden tablet:flex md:flex"
+                        type="button" data-drawer-target="filter-modal" data-drawer-show="filter-modal" aria-controls="filter-modal">
+                            <span class="material-symbols-outlined">
+                            tune
+                            </span> تصفية</button>
+                        <!-- <div class="bg-white p-4 w-full border border-system-grey rounded md:flex md:gap-8 md:w-full"> -->
+                            <!-- <h3 class="font-bold mb-2">Filters</h3> -->
+                            <div class="mb-4 md:hidden tablet:hidden">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="color">
+                                    الألوان
+                                </label>
+                                 <select class="md:block hidden appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="color">
+                                    <option>Red</option>
+                                    <option>Blue</option>
+                                    <option>Green</option>
+                                </select>
+
+                                <div class="flex gap-2 md:hidden flex-wrap">
+                                    <div class="rounded-full bg-red-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-green-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-blue-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-pink-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-yellow-500 w-8 h-8"></div>
+                                    <div class="rounded-full bg-purple-500 w-8 h-8"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 md:hidden tablet:hidden">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="type">
+                                    المناسبات
+                                </label>
+                                <select class="hidden md:block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="type">
+                                    <option>Electronics</option>
+                                    <option>Clothing</option>
+                                    <option>Accessories</option>
+                                </select>
+                                <div class="flex flex-col gap-2 justify-center md:hidden">
+                                <div>
+                                    <!-- <div class="round">
+                                        <span>عيد ميلاد</span>
+                                        <input type="checkbox" checked id="tag1" />
+                                        <label for="tag1"></label>
+                                    </div> -->
+                                    <input id="tag2" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag2" class="ms-2 text-sm">مبروك الزواج</label>
+                                </div>
+                                <div>
+                                    <input id="tag3" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag3" class="ms-2 text-sm">عيد الحب</label>
+                                </div>
+                                <div>
+                                    <input id="tag4" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag4" class="ms-2 text-sm">عيد الأم</label>
+                                </div>
+                                <div>
+                                    <input id="tag5" type="checkbox" value="" class="input-checkbox">
+                                    <label for="tag5" class="ms-2 text-sm font-normal">مبروك المنزل </label>
+                                </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="mb-4 md:hidden tablet:hidden">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
+                                    السعر
+                                </label>
+                                <select class="md:block hidden appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="price">
+                                    <option value="">All prices</option>
+                                    <option value="50">Less than $50</option>
+                                    <option value="100">Less than $100</option>
+                                    <option value="150">Less than $150</option>
+                                </select>
+
+                                <div class="flex flex-col gap-5 justify-center md:hidden">
+                                    <div>
+                                        <input id="price1" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price1" class="ms-2 text-sm">أقل من 200 ر.س</label>
+                                    </div>
+                                    <div>
+                                        <input id="price2" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price2" class="ms-2 text-sm">من 250 ر.س إلى 350 ر.س</label>
+                                    </div>
+                                    <div>
+                                        <input id="price3" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price3" class="ms-2 text-sm">من 350 ر.س إلى 500 ر.س</label>
+                                    </div>
+                                    <div>
+                                        <input id="price4" type="checkbox" value="" class="input-checkbox" required>
+                                        <label for="price4" class="ms-2 text-sm font-normal">600 ر.س و أكثر  </label>
+                                    </div>
+                                    </div>
+                            </div>
+                            
+                        <!-- </div> -->
+
                     </section>
-                    <section class="product-list-products grid grid-cols-3 gap-3 mb-20 md:grid-cols-3 sm:grid-cols-2">
-                        <div class="product-container">
-                            <div class="relative">
-                                <img src="https://floward.imgix.net/web/Files/thumPro/47fcef9c-63da-4d81-b8db-28911f999fcd.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
-                                <span class="product-sale-tag">خصم ١٥٪</span>
-                                <span class="product-fav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                        <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
-                                        </svg>
-                                </span>
-                            </div>
-                            <span class="product-hint">نوع الشوكلات</span>
-                            <p class="product-container-name">شوكولاتة هنوڤيرين</p>
-                            <p class="product-price">199 ر.س</p>
-                            <p class="sale-price">79.99 ر.س</p>
-                            <button id="add-to-cart">إضافة للسلة</button>
+                    
+                    <section class="product-list-products">
+                        <div class="applied-filters mt-1 flex flex-wrap">
+                            <button class="badge badge-red text-sm  px-5 mb-3 flex items-center rounded-full" id="filters-delete">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="25" viewBox="0 0 29 29" fill="none">
+                                    <path opacity="0.4" d="M8.88084 6.20003C9.86387 5.31895 11.1257 4.83331 12.4319 4.83331H21.191C24.1693 4.83331 26.5837 7.30641 26.5837 10.3571V18.6429C26.5837 21.6936 24.1693 24.1666 21.191 24.1666H12.4319C11.1257 24.1666 9.86387 23.681 8.88083 22.7999L4.25855 18.657C1.80314 16.4563 1.80314 12.5437 4.25857 10.3429L8.88084 6.20003Z" fill="#9C0000"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6512 10.2342C13.0051 9.88027 13.5788 9.88027 13.9327 10.2342L16.917 13.2183L19.9012 10.2342C20.2551 9.88027 20.8288 9.88027 21.1827 10.2342C21.5367 10.5881 21.5367 11.1619 21.1827 11.5158L18.1986 14.5L21.1827 17.4842C21.5367 17.8381 21.5367 18.4119 21.1827 18.7658C20.8288 19.1197 20.2551 19.1197 19.9012 18.7658L16.917 15.7817L13.9327 18.7658C13.5788 19.1197 13.0051 19.1197 12.6512 18.7658C12.2973 18.4119 12.2973 17.8381 12.6512 17.4842L15.6353 14.5L12.6512 11.5158C12.2973 11.1619 12.2973 10.5881 12.6512 10.2342Z" fill="#9C0000"/>
+                                    </svg>
+                                <span class="px-2">إلغاء التصفية</span>
+                            </button>
+                            <button class="badge badge-default  px-5 mb-3 flex items-center rounded-full" id="filter1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                                    <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M20.2669 8.73279C20.6208 9.0867 20.6208 9.6605 20.2669 10.0144L10.0139 20.2674C9.65995 20.6213 9.08615 20.6213 8.73223 20.2674C8.37832 19.9136 8.37832 19.3398 8.73223 18.9858L18.9852 8.73279C19.3391 8.37887 19.913 8.37887 20.2669 8.73279Z" fill="#947FBB"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2669 20.2674C19.913 20.6213 19.3392 20.6213 18.9852 20.2674L8.73223 10.0143C8.37832 9.66044 8.37832 9.08664 8.73223 8.73272C9.08614 8.37881 9.65995 8.37881 10.0139 8.73272L20.2669 18.9857C20.6208 19.3396 20.6208 19.9135 20.2669 20.2674Z" fill="#947FBB"/>
+                                </svg>
+                                <span>مبروك الزواج</span>
+                            </button>
+    
+                            <button class="badge badge-default px-5 mb-3 flex items-center rounded-full" id="filter2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                                    <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M20.2669 8.73279C20.6208 9.0867 20.6208 9.6605 20.2669 10.0144L10.0139 20.2674C9.65995 20.6213 9.08615 20.6213 8.73223 20.2674C8.37832 19.9136 8.37832 19.3398 8.73223 18.9858L18.9852 8.73279C19.3391 8.37887 19.913 8.37887 20.2669 8.73279Z" fill="#947FBB"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2669 20.2674C19.913 20.6213 19.3392 20.6213 18.9852 20.2674L8.73223 10.0143C8.37832 9.66044 8.37832 9.08664 8.73223 8.73272C9.08614 8.37881 9.65995 8.37881 10.0139 8.73272L20.2669 18.9857C20.6208 19.3396 20.6208 19.9135 20.2669 20.2674Z" fill="#947FBB"/>
+                                </svg>
+                                <span>أقل من 350 ر.س</span>
+                            </button>
+    
+                            <button class="badge badge-default px-5 mb-3 flex items-center rounded-full" id="filter3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                                    <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M20.2669 8.73279C20.6208 9.0867 20.6208 9.6605 20.2669 10.0144L10.0139 20.2674C9.65995 20.6213 9.08615 20.6213 8.73223 20.2674C8.37832 19.9136 8.37832 19.3398 8.73223 18.9858L18.9852 8.73279C19.3391 8.37887 19.913 8.37887 20.2669 8.73279Z" fill="#947FBB"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2669 20.2674C19.913 20.6213 19.3392 20.6213 18.9852 20.2674L8.73223 10.0143C8.37832 9.66044 8.37832 9.08664 8.73223 8.73272C9.08614 8.37881 9.65995 8.37881 10.0139 8.73272L20.2669 18.9857C20.6208 19.3396 20.6208 19.9135 20.2669 20.2674Z" fill="#947FBB"/>
+                                </svg>
+                                <span>بنفسجي</span>
+                            </button>
                         </div>
-
-                        <div class="product-container">
-                            <div class="relative">
-                                <img src="https://floward.imgix.net/web/Files/thumPro/9aeaf527-2582-4a8b-8138-c59463073d36.jpg?w=600&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
-                                <span class="product-sale-tag">خصم ١٥٪</span>
-                                <span class="product-fav-icon">
-                                    <svg  xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                        <path class="product-fav-icon-active" d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
-                                        </svg>
-                                </span>
+                        <div class="grid grid-cols-3 gap-3 mb-20 md:grid-cols-3 sm:grid-cols-2">
+                            <div class="product-container">
+                                <div class="relative">
+                                    <img src="https://floward.imgix.net/web/Files/thumPro/47fcef9c-63da-4d81-b8db-28911f999fcd.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
+                                    <span class="product-sale-tag">خصم ١٥٪</span>
+                                    <span class="product-fav-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                                            <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
+                                            </svg>
+                                    </span>
+                                </div>
+                                <span class="product-hint">نوع الشوكلات</span>
+                                <p class="product-container-name">شوكولاتة هنوڤيرين</p>
+                                <p class="product-price">199 ر.س</p>
+                                <p class="sale-price">79.99 ر.س</p>
+                                <button id="add-to-cart" class="hidden btn btn-primary btn-full-w">إضافة للسلة</button>
                             </div>
-                            <span class="product-hint">نوع الشوكلات</span>
-                            <p class="product-container-name">شوكولاتة باتشي</p>
-                            <p class="product-price">199 ر.س</p>
-                            <p class="sale-price">79.99 ر.س</p>
-                            <button id="add-to-cart" class="hidden btn btn-primary">إضافة للسلة</button>
-                        </div>
 
-                        <div class="product-container">
-                            <div class="relative">
-                                <img src="https://floward.imgix.net/web/Files/thumPro/868ddd50-6a41-4253-a8a6-4d7645a059a2.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
-                                <span class="product-sale-tag">خصم ١٥٪</span>
-                                <span class="product-fav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                        <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
-                                        </svg>
-                                </span>
+                            <div class="product-container">
+                                <div class="relative">
+                                    <img src="https://floward.imgix.net/web/Files/thumPro/9aeaf527-2582-4a8b-8138-c59463073d36.jpg?w=600&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
+                                    <span class="product-sale-tag">خصم ١٥٪</span>
+                                    <span class="product-fav-icon">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                                            <path class="product-fav-icon-active" d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
+                                            </svg>
+                                    </span>
+                                </div>
+                                <span class="product-hint">نوع الشوكلات</span>
+                                <p class="product-container-name">شوكولاتة باتشي</p>
+                                <p class="product-price">199 ر.س</p>
+                                <p class="sale-price">79.99 ر.س</p>
+                                <button id="add-to-cart" class="hidden btn btn-primary btn-full-w">إضافة للسلة</button>
                             </div>
-                            <span class="product-hint">نوع الشوكلات</span>
-                            <p class="product-container-name">شوكولاتة هنوڤيرين</p>
-                            <p class="product-price">199 ر.س</p>
-                            <p class="sale-price">79.99 ر.س</p>
-                            <button id="add-to-cart" class="hidden btn btn-primary">إضافة للسلة</button>
-                        </div>
 
-                        <div class="product-container">
-                            <div class="relative">
-                                <img src="https://floward.imgix.net/web/Files/thumPro/c6cb24d0-dc47-4ab9-b92c-e87b6ce44040.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
-                                <span class="product-sale-tag">خصم ١٥٪</span>
-                                <span class="product-fav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                        <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
-                                        </svg>
-                                </span>
+                            <div class="product-container">
+                                <div class="relative">
+                                    <img src="https://floward.imgix.net/web/Files/thumPro/868ddd50-6a41-4253-a8a6-4d7645a059a2.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
+                                    <span class="product-sale-tag">خصم ١٥٪</span>
+                                    <span class="product-fav-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                                            <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
+                                            </svg>
+                                    </span>
+                                </div>
+                                <span class="product-hint">نوع الشوكلات</span>
+                                <p class="product-container-name">شوكولاتة هنوڤيرين</p>
+                                <p class="product-price">199 ر.س</p>
+                                <p class="sale-price">79.99 ر.س</p>
+                                <button id="add-to-cart" class="hidden btn btn-primary btn-full-w">إضافة للسلة</button>
                             </div>
-                            <span class="product-hint">نوع الشوكلات</span>
-                            <p class="product-container-name">شوكولاتة هنوڤيرين</p>
-                            <p class="product-price">199 ر.س</p>
-                            <p class="sale-price">79.99 ر.س</p>
-                            <button id="add-to-cart" class="hidden btn btn-primary">إضافة للسلة</button>
-                        </div>
 
-                        <div class="product-container">
-                            <div class="relative">
-                                <img src="https://floward.imgix.net/web/Files/thumPro/ee46ba54-8069-4571-96c4-f0c0dfcf428e.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
-                                <span class="product-sale-tag">خصم ١٥٪</span>
-                                <span class="product-fav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                        <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
-                                        </svg>
-                                </span>
+                            <div class="product-container">
+                                <div class="relative">
+                                    <img src="https://floward.imgix.net/web/Files/thumPro/c6cb24d0-dc47-4ab9-b92c-e87b6ce44040.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
+                                    <span class="product-sale-tag">خصم ١٥٪</span>
+                                    <span class="product-fav-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                                            <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
+                                            </svg>
+                                    </span>
+                                </div>
+                                <span class="product-hint">نوع الشوكلات</span>
+                                <p class="product-container-name">شوكولاتة هنوڤيرين</p>
+                                <p class="product-price">199 ر.س</p>
+                                <p class="sale-price">79.99 ر.س</p>
+                                <button id="add-to-cart" class="hidden btn btn-primary btn-full-w">إضافة للسلة</button>
                             </div>
-                            <span class="product-hint">نوع الشوكلات</span>
-                            <p class="product-container-name">شوكولاتة هنوڤيرين</p>
-                            <p class="product-price">199 ر.س</p>
-                            <p class="sale-price">79.99 ر.س</p>
-                            <button id="add-to-cart" class="hidden btn btn-primary">إضافة للسلة</button>
+
+                            <div class="product-container">
+                                <div class="relative">
+                                    <img src="https://floward.imgix.net/web/Files/thumPro/ee46ba54-8069-4571-96c4-f0c0dfcf428e.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" alt="Product Image" class="w-full rounded-lg h-auto mb-2">
+                                    <span class="product-sale-tag">خصم ١٥٪</span>
+                                    <span class="product-fav-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                                            <path d="M11.7763 5.91542C13.4251 4.26729 16.0982 4.26729 17.747 5.91542C19.3959 7.56365 19.3959 10.236 17.747 11.8843L11.7374 17.8915C11.5637 18.0651 11.2822 18.0651 11.1086 17.8915L5.09897 11.8843C3.45008 10.236 3.45008 7.56365 5.09897 5.91542C6.74775 4.26729 9.42089 4.26729 11.0697 5.91542L11.423 6.2686L11.7763 5.91542Z" fill=""/>
+                                            </svg>
+                                    </span>
+                                </div>
+                                <span class="product-hint">نوع الشوكلات</span>
+                                <p class="product-container-name">شوكولاتة هنوڤيرين</p>
+                                <p class="product-price">199 ر.س</p>
+                                <p class="sale-price">79.99 ر.س</p>
+                                <button id="add-to-cart" class="hidden btn btn-primary btn-full-w">إضافة للسلة</button>
+                            </div>
                         </div>
                     </section>
                 </div>
