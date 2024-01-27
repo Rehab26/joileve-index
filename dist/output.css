@@ -2548,6 +2548,11 @@ li a:hover {
   margin-bottom: 2rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .-mt-3 {
   margin-top: -0.75rem;
 }
@@ -4227,6 +4232,11 @@ li a:hover {
     top: 0.25rem;
   }
 
+  .md\:mx-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4366,6 +4376,11 @@ li a:hover {
     padding-right: 1rem;
   }
 
+  .md\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
   .md\:pb-5 {
     padding-bottom: 1.25rem;
   }
@@ -4462,6 +4477,11 @@ li a:hover {
   .sm\:pb-3 {
     padding-bottom: 0.75rem;
   }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (max-width: 270px) {
@@ -4515,6 +4535,11 @@ li a:hover {
 
   .ti\:pb-2 {
     padding-bottom: 0.5rem;
+  }
+
+  .ti\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
