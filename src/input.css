@@ -340,7 +340,7 @@
         background-repeat: no-repeat;
     }
     .bg-default {
-      background: linear-gradient(180deg, #EFECF5 0%, rgba(255, 255, 255, 0.00) 20%);
+      background: linear-gradient(180deg, #EFECF5 0%, rgba(255, 255, 255, 0.00) 10%);
     }
     .drop-shadow {
       box-shadow: 12px 20px 24px 0px rgba(69, 79, 89, 0.08);
@@ -349,6 +349,9 @@
     .bg-primary-light{
         background: linear-gradient(177deg, rgba(255,255,255,1) 0%, rgba(222,215,235,0.5) 60%, rgba(222,215,234,0.3) 100%);
         background-repeat: no-repeat;
+    }
+    .bg-cart-summary {
+      background: rgba(242, 242, 247, 0.25);
     }
     .bg-primary-pink {
         background: linear-gradient(90deg, #F065A5 -35.43%, rgba(240, 101, 165, 0.47) 35.81%, rgba(240, 101, 165, 0.00) 100%);
@@ -568,6 +571,33 @@
     }
     .badge-purple{
       @apply bg-light-brand;
+    }
+    .page-content {
+      @apply py-10 px-20 tablet:px-4 md:py-5 md:px-1;
+    }
+    .cart-steps {
+      @apply flex justify-center items-center gap-8 tablet:gap-2 md:gap-1;
+    }
+    .cart-steps-img {
+      @apply w-24 md:w-10 tablet:w-16;
+    }
+    .cart-steps svg {
+      @apply md:w-12;
+    }
+    .cart-steps-content {
+      @apply flex flex-col gap-4 justify-center items-center text-lg text-[#E5E5EA] tablet:text-sm md:text-xs;
+    }
+    .active-step {
+      @apply text-light-brand;
+    }
+    .cart-content {
+      @apply  py-10 flex gap-10 justify-center tablet:flex-col md:flex-col;
+    }
+    .cart-content-products {
+      @apply w-[40%] py-10 flex flex-col gap-8 bg-white rounded-lg p-4 tablet:w-full md:w-full;
+    }
+    .cart-content-summary {
+      @apply  bg-cart-summary w-fit h-fit gap-5 border rounded-md p-4 tablet:w-full md:w-full;
     }
     
 

@@ -5,8 +5,7 @@ $(document).scroll(function() {
     screen = window.screen.height, //get page y value 
         header = $("#fixedNav");
         search = $(".search-block"); 
-    console.log('Sceen height: ' , y , screen);
-    if(y >= 200)  {
+    if(y >= 400)  {
         header.css({position: "fixed", "top" : "0", "left" : "0"});
         header.css("background" , "#fff");
         header.css("box-shadow" , "16px 16px 44px 0px rgba(0, 0, 0, 0.05)")
@@ -93,6 +92,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+        window.updateProductQuantity = function(num , value ,  input){
+            const a = parseInt(value);
+            if(num <0 && a == 1){
+                return;
+            }
+            input.value =a+num;
+        }
+        document.querySelectorAll('#add-product').forEach(el => el.addEventListener('click',function (e){
+            console.log("Clicked!!");
+            e.stopImmediatePropagation();
+            var target = e.target;
+            var parent = target.parentElement;
+            var input = parent.getElementsByTagName('input');
+            var val = input[0];
+            updateProductQuantity(1 , val.value , val);
+        }));
+        document.querySelectorAll('#remove-product').forEach(el => el.addEventListener('click',function (e){
+            e.stopImmediatePropagation();
+            var target = e.target;
+            var parent = target.parentElement;
+            var input = parent.getElementsByTagName('input');
+            var val = input[0];
+            updateProductQuantity(-1 , val.value , val);
+        }));
     }
     
     // Initialize for each scrollable section

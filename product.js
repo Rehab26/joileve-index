@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const imageWrapper = document.querySelector('.main-image-container');
     const miniImagesContainer = document.getElementById('mini-images-container');
     const lightboxImage = document.getElementById('lightbox-image');
-    const productQuantity = $('#product-quantity');
 
     // Add your image URLs here
     const imageUrls = ['https://media.bleems.com/flowers/379382270823230013252200_item.jpg', 'https://media.bleems.com/flowers/379382270823230013252200_item.jpg' , 'https://media.bleems.com/flowers/379382270823230013107478_item.jpg'];
@@ -77,14 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial highlight for the first image
     highlightMiniImage(0);
 
-    window.updateProductQuantity = function(num){
-        
-        const a = parseInt(productQuantity.val());
-        if(num <0 && a == 1){
-            return;
-        }
-        productQuantity.val(a+num)
-    }
 
     
 });
