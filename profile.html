@@ -157,8 +157,8 @@
                      </div>
                 </nav>
             </header>
-            <div class="flex gap-1 justify-center md:flex-col">
-                <div class="w-[20%] md:w-[80%] sm:w-full md:p-1 p-10 bg-white border rounded-lg border-system-grey mx-auto">
+            <div class="grid grid-cols-3 md:gap-3 m-2 items-center md:grid-cols-1">
+                <div class="w-[90%] md:w-[80%] sm:w-full md:p-1 p-10 bg-white border rounded-lg border-system-grey mx-auto">
                     <ul class="flex flex-col md:flex-row md:justify-center gap-3 py-3" id="profile-tab" data-tabs-toggle="#profile-tab-content" role="tablist">
                         <li role="presentation">
                             <button class="btn-light"  aria-current="page"
@@ -179,7 +179,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id="profile-tab-content" class="w-[60%] sm:w-full md:w-[80%] mx-auto p-10 bg-white border rounded-lg border-system-grey">
+                <div id="profile-tab-content" class="w-full sm:w-full md:w-[80%] col-span-2 mx-auto p-10 bg-white border rounded-lg border-system-grey">
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="info" role="tabpanel" aria-labelledby="info-tab">
                         <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
                     </div>
@@ -192,12 +192,34 @@
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="invoices" role="tabpanel" aria-labelledby="invoices-tab">
                         <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="rewards" role="tabpanel" aria-labelledby="rewards-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                    <div class="hidden p-4" id="rewards" role="tabpanel" aria-labelledby="rewards-tab">
+                        <div class="flex justify-between">
+                            <div class="reward-box flex items-center gap-3 my-3">
+                                <img src="src/assets/box-love.svg" alt="reward photo" />
+                                <div class="reward-box-content">
+                                    <p class="primary-heading text-pink-brand">834 نقطة</p>
+                                    <p class="text-text-grey">خصم 20 ريال مع كل 200 نقطة</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-default bg-pink-brand">استبدال نقاطي</button>
+                        </div>
+                            
+                            <div class="col-span-2 bg-pink-brand h-2.5 rounded-full mb-5" style="width: 100%"></div>
+                          
+                        <div class="flex flex-col">
+                            <div class="sale-box flex rounded-lg border-system-grey bg-white">
+                                <div class="flex flex-col bg-purple-100 p-3 rounded-lg">
+                                    <p class="text-black-brand">كود الخصم</p>
+                                    <p class="font-bold text-light-brand">#V43DSA</p>
+                                    <button onclick="copy()" class="btn btn-primary py-1 bg-white text-black">نسخ</button>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            </main>
+            
             <footer class="mt-20">
                 
                 <div class="px-10 py-20 lg:p-5 md:p-3 sm:p-1 ti:p-1">
@@ -228,6 +250,7 @@
                     <p class="font-bold md:text-[10px] lg:text-sm text-center">جميع الحقوق محفوظة متجر جويليف 2023  </p>
                 </div>
             </footer>
+        </main>
             <script src="backend/flowbite/dist/flowbite.min.js"></script>
         <script src="index.js"></script>
         </body>
