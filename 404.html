@@ -138,7 +138,7 @@
                     <div id="leftMenu" class="flex gap-3">
                         <button class="py-1 px-3 rounded-lg search-toggle"><img class="search-icon" src="src/assets/Search.svg" /></button>
                         
-                        <button class="flex space-x-1 justify-center items-center py-3 px-5 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
+                        <button type="button" data-drawer-target="cart-drawer" data-drawer-show="cart-drawer" aria-controls="cart-drawer" class="flex space-x-1 justify-center items-center py-3 px-5 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
                             <div class="absolute -top-3 -right-2 md:top-1 md:-right-2 h-5 w-5 bg-pink-brand rounded-full align-middle text-white text-[12px]">5</div>
                             <img src="src/assets/cart.svg"/>
                             <p class="sm:hidden md:hidden lg:block text-light-brand font-semibold">سلة المشتريات</p>
@@ -156,6 +156,107 @@
                         </form>
                      </div>
                 </nav>
+                <div id="cart-drawer" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-96 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+                    
+                    <button type="button" data-drawer-hide="cart-drawer" aria-controls="cart-drawer" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+                       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                       </svg>
+                       <span class="sr-only">Close menu</span>
+                    </button>
+                       
+                    <div class="bg-system-grey p-4 flex items-center gap-3 my-10 rounded-lg">
+                        <svg width="37" height="38" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.464844 8.7075C0.464844 6.82508 1.99085 5.29907 3.87327 5.29907H24.3239C26.2063 5.29907 27.7323 6.82508 27.7323 8.7075V12.1159H30.0486C31.084 12.1159 32.0633 12.5866 32.7101 13.3951L36.0745 17.6006C36.558 18.205 36.8214 18.9559 36.8214 19.7299V24.6135C36.8214 26.4959 35.2954 28.0219 33.413 28.0219H32.2769C32.2769 30.5318 30.2422 32.5665 27.7323 32.5665C25.2224 32.5665 23.1877 30.5318 23.1877 28.0219H11.8263C11.8263 30.5318 9.7916 32.5665 7.2817 32.5665C4.77181 32.5665 2.73713 30.5318 2.73713 28.0219C2.73713 27.9574 2.73847 27.8932 2.74114 27.8294C1.41522 27.3626 0.464844 26.0991 0.464844 24.6135V8.7075ZM3.40508 25.649C4.20417 24.3463 5.64146 23.4774 7.2817 23.4774C8.96384 23.4774 10.4325 24.3913 11.2183 25.7497H23.7957C24.1948 25.0597 24.7701 24.4845 25.46 24.0854V8.7075C25.46 8.08003 24.9513 7.57136 24.3239 7.57136H3.87327C3.2458 7.57136 2.73713 8.08003 2.73713 8.7075V24.6135C2.73713 25.0741 3.01117 25.4706 3.40508 25.649ZM27.7323 23.4774C29.4144 23.4774 30.8831 24.3913 31.6689 25.7497H33.413C34.0405 25.7497 34.5491 25.241 34.5491 24.6135V19.7299C34.5491 19.4719 34.4613 19.2216 34.3002 19.0201L30.9358 14.8146C30.7202 14.5451 30.3937 14.3882 30.0486 14.3882H27.7323V23.4774ZM7.2817 25.7497C6.02675 25.7497 5.00942 26.767 5.00942 28.0219C5.00942 29.2769 6.02675 30.2942 7.2817 30.2942C8.53665 30.2942 9.55399 29.2769 9.55399 28.0219C9.55399 26.767 8.53665 25.7497 7.2817 25.7497ZM27.7323 25.7497C26.4773 25.7497 25.46 26.767 25.46 28.0219C25.46 29.2769 26.4773 30.2942 27.7323 30.2942C28.9872 30.2942 30.0046 29.2769 30.0046 28.0219C30.0046 26.767 28.9872 25.7497 27.7323 25.7497Z" fill="#8572A8"/>
+                        </svg>
+                        <div class="flex flex-col text-sm">
+                            <p class="py-3">متبقي فقط<span class="text-light-brand"> 221 ر.س</span> لتحصل على توصيل مجاني!</p>
+                            <div class="w-full bg-white rounded-full h-2.5 dark:bg-gray-700">
+                                <div class="bg-light-brand h-2.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <p class="text-light-brand mt-1">400 ر.س</p>
+                        </div>
+                    </div>
+                    <div class="product-in-cart flex items-center">
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute top-2 right-1 cursor-pointer text-[#858585] rounded-md hover:border hover:border-light-black" style="font-size: 14px;">
+                                close
+                            </span>
+                            <img src="https://floward.imgix.net/web/Files/thumPro/8dcf7502-9d1d-465b-9a33-ed7634ccd584.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" class="w-28 rounded-lg" alt="product image" />
+                        </div>
+                        <div class="p-4 flex flex-col gap-1">
+                            <p>شوكولاتة هنوڤيرين</p>
+                            <p class="text-price">15.88 ريال</p>
+                            <div class="cart-quantity flex justify-center items-center gap-5">
+                            <p>الكمية</p>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="add-product" style="font-size: 20px;">
+                                    add
+                                    </span>
+                                <input id="product-quantity" type="text" value="1" class="text-light-black w-[40px] h-[40px] rounded-lg border-text-grey text-center" disabled="">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="remove-product" style="font-size: 20px;">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-in-cart flex items-center">
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute top-2 right-1 cursor-pointer text-[#858585] rounded-md hover:border hover:border-light-black" style="font-size: 14px;">
+                                close
+                            </span>
+                            <img src="https://floward.imgix.net/web/Files/thumPro/8dcf7502-9d1d-465b-9a33-ed7634ccd584.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" class="w-28 rounded-lg" alt="product image" />
+                        </div>
+                        <div class="p-4 flex flex-col gap-1">
+                            <p>شوكولاتة هنوڤيرين</p>
+                            <p class="text-price">15.88 ريال</p>
+                            <div class="cart-quantity flex justify-center items-center gap-5">
+                            <p>الكمية</p>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="add-product" style="font-size: 20px;">
+                                    add
+                                    </span>
+                                <input id="product-quantity" type="text" value="1" class="text-light-black w-[40px] h-[40px] rounded-lg border-text-grey text-center" disabled="">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="remove-product" style="font-size: 20px;">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-in-cart flex items-center">
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute top-2 right-1 cursor-pointer text-[#858585] rounded-md hover:border hover:border-light-black" style="font-size: 14px;">
+                                close
+                            </span>
+                            <img src="https://floward.imgix.net/web/Files/thumPro/8dcf7502-9d1d-465b-9a33-ed7634ccd584.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" class="w-28 rounded-lg" alt="product image" />
+                        </div>
+                        <div class="p-4 flex flex-col gap-1">
+                            <p>شوكولاتة هنوڤيرين</p>
+                            <p class="text-price">15.88 ريال</p>
+                            <div class="cart-quantity flex justify-center items-center gap-5">
+                            <p>الكمية</p>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="add-product" style="font-size: 20px;">
+                                    add
+                                    </span>
+                                <input id="product-quantity" type="text" value="1" class="text-light-black w-[40px] h-[40px] rounded-lg border-text-grey text-center" disabled="">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="remove-product" style="font-size: 20px;">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="text-lg p-3 my-5">
+                        <p class="font-bold">المجموع الكلي:
+                            <span class="text-light-brand font-bold">179.00 ر.س</span>
+                        </p>
+                        <button class="btn btn-primary w-full font-light">إتمام الشراء</button>
+                        <button class="btn btn-primary bg-black w-full font-light">عرض وتحرير عربة التسوق</button>
+                    </div>
+                 </div>
             </header>
                 <div class="flex flex-col justify-center items-center gap-4 my-10">
                     <img class="my-6" src="src/assets/404.png" alt="404 image"/>

@@ -139,7 +139,7 @@
                     <div id="leftMenu" class="flex gap-3">
                         <button class="py-1 px-3 bg-light-pink rounded-lg search-toggle"><img class="search-icon" src="src/assets/Search.svg" /></button>
                         
-                        <button class="flex space-x-1 justify-center items-center py-3 px-5 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
+                        <button type="button" data-drawer-target="cart-drawer" data-drawer-show="cart-drawer" aria-controls="cart-drawer" class="flex space-x-1 justify-center items-center py-3 px-5 tablet:px-5 tablet:py-2 md:p-0 sm:p-0 ti:p-0 rounded-lg lg:border tablet:border border-light-brand relative">
                             <div class="absolute -top-3 -right-2 md:top-1 md:-right-2 h-5 w-5 bg-pink-brand rounded-full align-middle text-white text-[12px]">5</div>
                             <img src="src/assets/cart.svg"/>
                             <p class="sm:hidden md:hidden lg:block text-light-brand font-semibold">سلة المشتريات</p>
@@ -157,9 +157,166 @@
                         </form>
                      </div>
                 </nav>
+
+                <!--Cart box-->
+                <div id="cart-drawer" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-96 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+                    
+                    <button type="button" data-drawer-hide="cart-drawer" aria-controls="cart-drawer" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+                       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                       </svg>
+                       <span class="sr-only">Close menu</span>
+                    </button>
+                       
+                    <div class="bg-system-grey p-4 flex items-center gap-3 my-10 rounded-lg">
+                        <svg width="37" height="38" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.464844 8.7075C0.464844 6.82508 1.99085 5.29907 3.87327 5.29907H24.3239C26.2063 5.29907 27.7323 6.82508 27.7323 8.7075V12.1159H30.0486C31.084 12.1159 32.0633 12.5866 32.7101 13.3951L36.0745 17.6006C36.558 18.205 36.8214 18.9559 36.8214 19.7299V24.6135C36.8214 26.4959 35.2954 28.0219 33.413 28.0219H32.2769C32.2769 30.5318 30.2422 32.5665 27.7323 32.5665C25.2224 32.5665 23.1877 30.5318 23.1877 28.0219H11.8263C11.8263 30.5318 9.7916 32.5665 7.2817 32.5665C4.77181 32.5665 2.73713 30.5318 2.73713 28.0219C2.73713 27.9574 2.73847 27.8932 2.74114 27.8294C1.41522 27.3626 0.464844 26.0991 0.464844 24.6135V8.7075ZM3.40508 25.649C4.20417 24.3463 5.64146 23.4774 7.2817 23.4774C8.96384 23.4774 10.4325 24.3913 11.2183 25.7497H23.7957C24.1948 25.0597 24.7701 24.4845 25.46 24.0854V8.7075C25.46 8.08003 24.9513 7.57136 24.3239 7.57136H3.87327C3.2458 7.57136 2.73713 8.08003 2.73713 8.7075V24.6135C2.73713 25.0741 3.01117 25.4706 3.40508 25.649ZM27.7323 23.4774C29.4144 23.4774 30.8831 24.3913 31.6689 25.7497H33.413C34.0405 25.7497 34.5491 25.241 34.5491 24.6135V19.7299C34.5491 19.4719 34.4613 19.2216 34.3002 19.0201L30.9358 14.8146C30.7202 14.5451 30.3937 14.3882 30.0486 14.3882H27.7323V23.4774ZM7.2817 25.7497C6.02675 25.7497 5.00942 26.767 5.00942 28.0219C5.00942 29.2769 6.02675 30.2942 7.2817 30.2942C8.53665 30.2942 9.55399 29.2769 9.55399 28.0219C9.55399 26.767 8.53665 25.7497 7.2817 25.7497ZM27.7323 25.7497C26.4773 25.7497 25.46 26.767 25.46 28.0219C25.46 29.2769 26.4773 30.2942 27.7323 30.2942C28.9872 30.2942 30.0046 29.2769 30.0046 28.0219C30.0046 26.767 28.9872 25.7497 27.7323 25.7497Z" fill="#8572A8"/>
+                        </svg>
+                        <div class="flex flex-col text-sm">
+                            <p class="py-3">متبقي فقط<span class="text-light-brand"> 221 ر.س</span> لتحصل على توصيل مجاني!</p>
+                            <div class="w-full bg-white rounded-full h-2.5 dark:bg-gray-700">
+                                <div class="bg-light-brand h-2.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <p class="text-light-brand mt-1">400 ر.س</p>
+                        </div>
+                    </div>
+                    <div class="product-in-cart flex items-center">
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute top-2 right-1 cursor-pointer text-[#858585] rounded-md hover:border hover:border-light-black" style="font-size: 14px;">
+                                close
+                            </span>
+                            <img src="https://floward.imgix.net/web/Files/thumPro/8dcf7502-9d1d-465b-9a33-ed7634ccd584.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" class="w-28 rounded-lg" alt="product image" />
+                        </div>
+                        <div class="p-4 flex flex-col gap-1">
+                            <p>شوكولاتة هنوڤيرين</p>
+                            <p class="text-price">15.88 ريال</p>
+                            <div class="cart-quantity flex justify-center items-center gap-5">
+                            <p>الكمية</p>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="add-product" style="font-size: 20px;">
+                                    add
+                                    </span>
+                                <input id="product-quantity" type="text" value="1" class="text-light-black w-[40px] h-[40px] rounded-lg border-text-grey text-center" disabled="">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="remove-product" style="font-size: 20px;">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-in-cart flex items-center">
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute top-2 right-1 cursor-pointer text-[#858585] rounded-md hover:border hover:border-light-black" style="font-size: 14px;">
+                                close
+                            </span>
+                            <img src="https://floward.imgix.net/web/Files/thumPro/8dcf7502-9d1d-465b-9a33-ed7634ccd584.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" class="w-28 rounded-lg" alt="product image" />
+                        </div>
+                        <div class="p-4 flex flex-col gap-1">
+                            <p>شوكولاتة هنوڤيرين</p>
+                            <p class="text-price">15.88 ريال</p>
+                            <div class="cart-quantity flex justify-center items-center gap-5">
+                            <p>الكمية</p>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="add-product" style="font-size: 20px;">
+                                    add
+                                    </span>
+                                <input id="product-quantity" type="text" value="1" class="text-light-black w-[40px] h-[40px] rounded-lg border-text-grey text-center" disabled="">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="remove-product" style="font-size: 20px;">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-in-cart flex items-center">
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute top-2 right-1 cursor-pointer text-[#858585] rounded-md hover:border hover:border-light-black" style="font-size: 14px;">
+                                close
+                            </span>
+                            <img src="https://floward.imgix.net/web/Files/thumPro/8dcf7502-9d1d-465b-9a33-ed7634ccd584.jpg?w=450&max-h=400&max-w=400&fit=crop&auto=format" class="w-28 rounded-lg" alt="product image" />
+                        </div>
+                        <div class="p-4 flex flex-col gap-1">
+                            <p>شوكولاتة هنوڤيرين</p>
+                            <p class="text-price">15.88 ريال</p>
+                            <div class="cart-quantity flex justify-center items-center gap-5">
+                            <p>الكمية</p>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="add-product" style="font-size: 20px;">
+                                    add
+                                    </span>
+                                <input id="product-quantity" type="text" value="1" class="text-light-black w-[40px] h-[40px] rounded-lg border-text-grey text-center" disabled="">
+                                <span class="material-symbols-outlined text-text-grey cursor-pointer" id="remove-product" style="font-size: 20px;">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="text-lg p-3 my-5">
+                        <p class="font-bold">المجموع الكلي:
+                            <span class="text-light-brand font-bold">179.00 ر.س</span>
+                        </p>
+                        <button class="btn btn-primary w-full font-light">إتمام الشراء</button>
+                        <button class="btn btn-primary bg-black w-full font-light">عرض وتحرير عربة التسوق</button>
+                    </div>
+                 </div>
+                 <!--End of Cart box-->
+
             </header>
                 <div class="my-10 sm:my-5 flex justify-center px-20 md:px-5 items-center">
-                    <img src="src/assets/banner.svg" />
+                    
+
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-[40rem] overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="src/assets/banner.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-2.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+
                 </div>
                 <div class="w-full h-full bg-logo-pattern bg-no-repeat bg-right-top pb-20">
                 <div class="flex sm:justify-center gap-4 md:justify-around justify-between items-center my-10">
