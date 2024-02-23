@@ -467,7 +467,7 @@
         @apply text-light-brand text-lg;
     }
     .btn {
-        @apply py-2 px-5 block outline-none text-lg text-center rounded-md my-2;
+        @apply cursor-pointer py-2 px-5 block outline-none text-lg text-center rounded-md my-2;
     }
     .btn-primary {
         @apply text-white bg-light-brand hover:bg-opacity-80;
@@ -513,9 +513,8 @@
         checked:bg-light-brand;
     }
     .btn-light {
-      @apply w-full  border rounded-md p-4 aria-selected:bg-[#EFECF5]
-       aria-selected:border-light-brand aria-selected:text-light-brand
-      bg-[#F2F2F7] text-black hover:bg-opacity-80 hover:text-light-brand aria-selected:hover:text-light-brand font-semibold;
+      @apply  border rounded-lg py-3 px-4 
+      bg-[#F2F2F7] text-black hover:bg-opacity-80 hover:text-light-brand  font-semibold;
     }
     .product-price {
       @apply text-gray-500 line-through mb-1;
