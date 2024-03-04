@@ -83,15 +83,16 @@
                         </ul>
                     </div>
 
-                    <div id="drawer-right-example" class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-full" tabindex="-1" aria-labelledby="drawer-right-label">
+                    <div id="drawer-right-example" class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-scroll transition-transform translate-x-full bg-white w-full" tabindex="-1" aria-labelledby="drawer-right-label">
                         <h5 id="drawer-right-label" class="inline-flex items-center mb-4 text-lg font-semibold">
+                        </h5>
                        <button type="button" data-drawer-hide="drawer-right-example" aria-controls="drawer-right-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
                           <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                             <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                           </svg>
                           <span class="sr-only">Close menu</span>
                        </button>
-                       <div class="h-[60vh] w-full flex flex-col justify-around items-center gap-5 p-3">
+                       <div class="h-[60vh] w-full flex flex-col justify-between items-center gap-5 p-3 text-2xl font-bold">
                         <div class="flex gap-6">
                             <span class="material-symbols-outlined font-extrabold">
                                 favorite
@@ -103,15 +104,16 @@
                         </div>
                         <ul class="flex flex-col gap-5 self-center">
                             <li class="text-pink-brand">تخفيضات <a><i class="fa-solid fa-chevron-down"></i></a></li>
-                            <li class="cursor-pointer" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">ورد وهدايا
+                            <li class="cursor-pointer" aria-controls="dropdown-tags" data-collapse-toggle="dropdown-tags">ورد وهدايا
                                 <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                                 </svg>
                             </li>
-                            <ul id="dropdown-example" class="hidden py-2 space-y-2 font-normal">
+                            <ul id="dropdown-tags" class="hidden py-2 space-y-2 font-normal">
                                 <li>
                                    <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">جميع المنتجات</a>
                                 </li>
+                                
                                 <li>
                                    <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">شوكلاتة</a>
                                 </li>
@@ -119,19 +121,39 @@
                                    <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">ورد</a>
                                 </li>
                           </ul>
-                            <li class="cursor-pointer">مناسبات
+                            <li class="cursor-pointer" aria-controls="dropdown-cats" data-collapse-toggle="dropdown-cats">مناسبات
                                 <svg class="w-2.5 h-2.5 ms-3 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                                 </svg>
                             </li>
+                            <ul id="dropdown-cats" class="hidden py-2 space-y-2 font-normal">
+                                <li>
+                                   <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">مبروك الزواج</a>
+                                </li>
+                                <li>
+                                   <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">تخرج</a>
+                                </li>
+                                <li>
+                                   <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">ميلاد سعيد</a>
+                                </li>
+                          </ul>
                         </ul>
-                        <div class="flex gap-3">
-                            <img src="src/assets/car.svg"/> 
-                            <p>توصيل إلى</p>
-                            <img class="" src="src/assets/flag.svg" /> 
-                            <a href="#" class="space-x-1">الرياض</a>
+                        <div>
+                            <div class="flex gap-3">
+                                <img src="src/assets/car.svg"/> 
+                                <p>توصيل إلى</p>
+                                <img class="" src="src/assets/flag.svg" /> 
+                                <a href="#" class="space-x-1">الرياض</a>
+                            </div>
+                            <div class="flex gap-2 my-3 items-center justify-center mx-auto">
+                                <a href=""><img class="w-12" src="src/assets/twitter.svg" /></a>
+                                <a href=""><img class="w-12" src="src/assets/linked.svg" /></a>
+                                <a href=""><img class="w-12" src="src/assets/insta.svg" /></a>
+                                <a href=""><img class="w-12" src="src/assets/facebook.svg" /></a>
+                            </div>
                         </div>
-
+                        
+                        
                        </div>
                     </div>
 
